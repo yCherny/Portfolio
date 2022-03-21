@@ -33,7 +33,7 @@ export const Section = (props) => {
         py={2.5}
       >
         {/* Section Header */}
-        <Grid item xs={8}>
+        <Grid item xs={props.section === 'Résumé' ? 8 : 12}>
           <Stack direction="row" spacing={1} alignItems="center">
             <Box
               sx={{
