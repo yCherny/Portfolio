@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Footer } from './components/Footer/Footer';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from './Theme';
+import { Landing } from './components/Landing/Landing';
+import CssBaseline from '@mui/material/CssBaseline';
+import { Section } from './components/Section/Section';
+
+const sections = ['Skills', 'Principles', 'Résumé'];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Landing />
+      {sections.map((section) => (
+        <Section section={section} />
+      ))}
+      ;
+      <Footer />
+    </ThemeProvider>
   );
 }
 

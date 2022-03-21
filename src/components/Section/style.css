@@ -1,0 +1,46 @@
+.right {
+  align-self: flex-end;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+}
+.right-1 {
+  animation-name: right-1;
+  animation-timing-function: linear;
+}
+@keyframes right-1 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.left {
+  align-self: flex-end;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+}
+.left-1 {
+  animation-name: right-1;
+  animation-timing-function: linear;
+}
+@keyframes left-1 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
