@@ -8,10 +8,10 @@ import {
   TerminalIcon,
 } from '@heroicons/react/solid';
 import Typography from '@mui/material/Typography';
-import { Skillset } from '../../Skillset/Skillset';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
 
 const data = [
   {
@@ -21,7 +21,6 @@ const data = [
     school: 'Tandon School of Engineering',
     graduation: 'Expected Spring 2023',
     gpa: undefined,
-    // tint: '#790972',
     tint: '#33B587',
     coursework: [
       'Infosec and Privacy',
@@ -38,9 +37,8 @@ const data = [
     college: 'Baruch College',
     school: 'Weissman School of Arts and Science',
     graduation: 'Graduated Summer 2019',
-    gpa: '3.81',
+    gpa: 'GPA: 3.81',
     tint: '#33B587',
-    // tint: '#3545b3',#33B587
     coursework: [
       'Advanced Micro and Macroeconomics',
       'Econometrics',
@@ -97,25 +95,38 @@ export const Education = () => {
                   {education.specialization}
                 </Button>
               </Stack>
-              <Typography variant="header" style={{ fontWeight: '400' }}>
-                {education.college}
-              </Typography>
-              <Typography variant="subtitle" style={{ fontWeight: '400' }}>
-                {education.school}
-              </Typography>
-              <Typography variant="subtitle" style={{ fontWeight: '400' }}>
-                {education.graduation}
-              </Typography>
-              {education.gpa !== undefined ? (
-                <Typography variant="subtitle" style={{ fontWeight: '400' }}>
-                  {education.gpa}
+              <Stack spacing={1}>
+                <Typography variant="sectionHeader">
+                  {education.college}
                 </Typography>
-              ) : null}
+                <Typography variant="sectionSubtitle" fontWeight={600}>
+                  {education.school}
+                </Typography>
+                <Typography
+                  variant="sectionSubtitle"
+                  style={{ color: 'gray', fontWeight: 'lighter' }}
+                >
+                  {education.graduation}
+                </Typography>
+                {education.gpa !== undefined ? (
+                  <Typography
+                    variant="sectionSubtitle"
+                    style={{ fontWeight: '400' }}
+                  >
+                    {education.gpa}
+                  </Typography>
+                ) : null}
+                <Divider color={'#414141'} />
+              </Stack>
+
               <Stack spacing={2}>
-                <h2 style={{ fontWeight: '400', fontSize: '2vw', margin: 0 }}>
-                  Technologies and APIs Involved
-                </h2>
-                <List dense={true}>
+                <Typography
+                  variant="sectionSubtitle"
+                  style={{ fontWeight: '400' }}
+                >
+                  Relevant Coursework
+                </Typography>
+                <List spacing={0}>
                   {education.coursework.map((course) => (
                     <ListItem>
                       <ListItemText primary={course} />
@@ -128,14 +139,6 @@ export const Education = () => {
         ))}
         ;
       </Grid>
-      <Stack spacing={0} px={5}>
-        <h2>Supporting Skills</h2>
-        <Stack direction="row" rowGap={2} spacing={2} sx={{ flexWrap: 'wrap' }}>
-          <Skillset title="Machine Learning" />
-          <Skillset title="Cybersecurity" />
-          <Skillset title="AR/VR" />
-        </Stack>
-      </Stack>
     </Stack>
   );
 };

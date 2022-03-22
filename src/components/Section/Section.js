@@ -1,35 +1,43 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import background from '../../images/background.svg';
 import {
-  ChevronLeftIcon,
   ChevronRightIcon,
   DocumentDownloadIcon,
 } from '@heroicons/react/outline';
-import Fab from '@mui/material/Fab';
 import './style.css';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import { Pagination } from '@mui/material';
+import { Slideshow } from '../Slideshow/Slideshow';
+import { usePagination } from '@mui/material/Pagination';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
 import { Root } from '../Slideshow/Root/Root';
 import { Panel } from '../Slideshow/Panel/Panel';
 import { Toolkit } from '../Slideshow/Toolkit/Toolkit';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
 import { Education } from '../Slideshow/Education/Education';
-import Container from '@mui/material/Container';
-import { Pagination } from '@mui/material';
-
-const subtitle = 'Toolkit'; // Portfolio
 
 export const Section = (props) => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const [page, setPage] = React.useState(1);
+  const handleChange = (event, value) => {
+    console.log(value);
+    setPage(value);
+  };
+
   return (
-    <Stack
-      direction={'column'}
-      minHeight={'100vh'}
-      id={props.section.header}
-      sx={{
-        backgroundColor: 'pink',
-      }}
-    >
+    <Stack direction={'column'} minHeight={'100vh'} id={props.section.header}>
       <Grid
         container
         direction="row"
@@ -41,24 +49,46 @@ export const Section = (props) => {
         {/* Section Header */}
         <Grid item xs={props.section.header === 'Résumé' ? 8 : 12}>
           <Stack direction="row" spacing={1} alignItems="center">
-            <Box
-              sx={{
-                px: 4,
-                py: 1,
-                color: '#000000',
-                backgroundColor: '#FFFFFF',
+            <Button
+              variant="pageSection"
+              id="basic-button"
+              aria-controls={open ? 'basic-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+              onClick={handleClick}
+            >
+              {props.section.header}
+            </Button>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
               }}
             >
-              <p
-                style={{
-                  fontWeight: 'bold',
-                  margin: 0,
-                  textTransform: 'uppercase',
-                }}
-              >
-                {props.section.header}
-              </p>
-            </Box>
+              <AnchorLink href={'#Landing'}>
+                <MenuItem onClick={handleClose} variant="menuOption">
+                  Landing
+                </MenuItem>
+              </AnchorLink>
+              <AnchorLink href={'#Development'}>
+                <MenuItem onClick={handleClose} variant="menuOption">
+                  Development
+                </MenuItem>
+              </AnchorLink>
+              <AnchorLink href={'#Principles'}>
+                <MenuItem onClick={handleClose} variant="menuOption">
+                  Principles
+                </MenuItem>
+              </AnchorLink>
+              <AnchorLink href={'#Résumé'}>
+                <MenuItem onClick={handleClose} variant="menuOption">
+                  Résumé
+                </MenuItem>
+              </AnchorLink>
+            </Menu>
             <Stack direction="row" spacing={3} alignItems="center">
               <ChevronRightIcon
                 style={{
@@ -84,64 +114,16 @@ export const Section = (props) => {
           </Grid>
         ) : null}
       </Grid>
-      {props.section.header === 'Résumé' ? <Education /> : <Root />}
-      {/* <Root /> */}
-      {/* <Panel /> */}
-      {/* <Toolkit /> */}
+      <Slideshow />
       <Stack alignItems={'center'} py={1.5}>
         <Pagination
-          count={4}
+          count={props.section.subheaders.length}
           variant="outlined"
           size="large"
           color="secondary"
+          onChange={handleChange}
         />
       </Stack>
-      {/* <Grid
-        container
-        direction="row"
-        justifyContent={'space-between'}
-        sx={{ backgroundColor: 'red' }}
-        px={5}
-      >
-        <Grid item xs={3} sx={{ backgroundColor: 'green' }}>
-          <Fab
-            variant="extended"
-            style={{
-              fontWeight: 'bold',
-              backgroundColor: 'transparent',
-              color: 'gray',
-              border: '1px solid gray',
-              borderRadius: '10px',
-            }}
-          >
-            <ChevronLeftIcon
-              style={{
-                height: '16px',
-                width: '16px',
-              }}
-            />
-            Back
-          </Fab>
-        </Grid>
-        <Grid item xs={3} sx={{ backgroundColor: 'purple' }}>
-          <Fab
-            variant="extended"
-            className="right right-1"
-            style={{
-              fontWeight: 'bold',
-              borderRadius: '10px',
-            }}
-          >
-            Next
-            <ChevronRightIcon
-              style={{
-                height: '16px',
-                width: '16px',
-              }}
-            />
-          </Fab>
-        </Grid>
-      </Grid> */}
     </Stack>
   );
 };

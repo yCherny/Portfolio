@@ -8,7 +8,10 @@ import { Section } from './components/Section/Section';
 // Temporary Hard Coded Data
 const sections = [
   { header: 'Development', subheaders: ['Stack', 'Portfolio', 'Skills'] },
-  { header: 'Principles', subheaders: ['Design', 'Security', 'Privacy'] },
+  {
+    header: 'Principles',
+    subheaders: ['Design', 'Security & Privacy', 'Accessibility'],
+  },
   {
     header: 'Résumé',
     subheaders: ['Education', 'Miscellaneous', 'Work Experience'],

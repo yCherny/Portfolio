@@ -28,6 +28,26 @@ export const theme = createTheme({
     },
   },
   components: {
+    MuiMenuItem: {
+      variants: [
+        {
+          props: { variant: 'menuOption' },
+          style: {
+            padding: '8px 30px 8px 30px',
+            color: '#000000',
+            backgroundColor: '#FFFFFF',
+            fontWeight: 'bold',
+            borderRadius: '0px',
+            textTransform: 'uppercase',
+            '&:hover': {
+              backgroundColor: '#33B587',
+              fontWeight: '800',
+              color: 'white',
+            },
+          },
+        },
+      ],
+    },
     MuiButton: {
       variants: [
         {
@@ -47,6 +67,22 @@ export const theme = createTheme({
           style: {
             borderRadius: '5px',
             fontWeight: 800,
+          },
+        },
+        {
+          props: { variant: 'pageSection' },
+          style: {
+            padding: '8px 30px 8px 30px',
+            color: '#000000',
+            backgroundColor: '#FFFFFF',
+            fontWeight: 'bold',
+            borderRadius: '0px',
+            textTransform: 'uppercase',
+            '&:hover': {
+              backgroundColor: '#33B587',
+              fontWeight: '800',
+              color: 'white',
+            },
           },
         },
         {
@@ -87,6 +123,57 @@ theme.typography.subtitle = {
   // },
   [theme.breakpoints.down('md')]: {
     fontSize: '1.5rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '2.4rem',
+  },
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '2.4rem',
+  },
+};
+
+theme.typography.sectionHeader = {
+  color: '#33B587',
+  fontSize: '1.2rem',
+  // '@media (min-width:600px)': {
+  //   fontSize: '1.5rem',
+  // },
+  [theme.breakpoints.down('md')]: {
+    fontSize: '2.4rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '2.4rem',
+  },
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '2.4rem',
+  },
+};
+
+theme.typography.sectionSubtitle = {
+  color: 'white',
+  fontSize: '1.2rem',
+  // '@media (min-width:600px)': {
+  //   fontSize: '1.5rem',
+  // },
+  [theme.breakpoints.down('md')]: {
+    fontSize: '1.3rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '2.4rem',
+  },
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '2.4rem',
+  },
+};
+
+theme.typography.sectionContent = {
+  color: 'white',
+  fontSize: '1.2rem',
+  // '@media (min-width:600px)': {
+  //   fontSize: '1.5rem',
+  // },
+  [theme.breakpoints.down('md')]: {
+    fontSize: '1.25rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '2.4rem',

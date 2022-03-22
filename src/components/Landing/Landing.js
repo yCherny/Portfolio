@@ -9,7 +9,6 @@ import background from '../../images/background.svg';
 import { SearchIcon, ArrowDownIcon } from '@heroicons/react/solid';
 import { Links } from '../Links/Links';
 import Typography from '@mui/material/Typography';
-import { Skillset } from '../Skillset/Skillset';
 import './style.css';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
@@ -24,6 +23,7 @@ export const Landing = () => {
         backgroundSize: 'cover',
       }}
       alignItems="flex-end"
+      id={'Landing'}
     >
       <Grid
         container
@@ -50,27 +50,19 @@ export const Landing = () => {
         {/* Data */}
         <Grid item xs={12} md={6}>
           <Stack spacing={2} alignItems="flex-start">
-            <Box
-              sx={{
-                px: 4,
-                py: 1,
-                color: '#000000',
-                backgroundColor: '#FFFFFF',
-              }}
-            >
-              <p style={{ fontWeight: 'bold', margin: 0 }}>YEGOR CHERNYSHEV</p>
-            </Box>
-
-            {/* style={{ fontWeight: '400', fontSize: { xs: 120, sm: '3.5vw' } */}
-            <Typography variant="header" style={{ fontWeight: '400' }}>
-              BRIDGING BUSINESS AND TECHNOLOGY
-            </Typography>
             <Button
               variant="rounded"
               startIcon={<SearchIcon height={25} width={25} />}
             >
               Open to Work
             </Button>
+            <AnchorLink href={'#Landing'}>
+              <Button variant="pageSection">YEGOR CHERNYSHEV</Button>
+            </AnchorLink>
+            {/* style={{ fontWeight: '400', fontSize: { xs: 120, sm: '3.5vw' } */}
+            <Typography variant="header" style={{ fontWeight: '400' }}>
+              BRIDGING BUSINESS AND TECHNOLOGY
+            </Typography>
             <Typography variant="content" style={{ fontWeight: '400' }}>
               Software engineer from New York City focused on building
               beautiful, innovative products.
@@ -84,9 +76,6 @@ export const Landing = () => {
                 spacing={2}
                 sx={{ flexWrap: 'wrap' }}
               >
-                {/* <Skillset title="Front-End Development" />
-                <Skillset title="Mobile Development" />
-                <Skillset title="Application Security" /> */}
                 <AnchorLink href="#Development">
                   <Button variant="outlined">Development</Button>
                 </AnchorLink>

@@ -3,57 +3,60 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-// import { Links } from '../Links/Links';
-import profilePic from '../../../images/profilePic.jpeg';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-
-const projects = [
-  {
-    title: 'Rally',
-    platform: 'iOS',
-    icon: profilePic,
-    apis: ['Google Firebase', 'Apple Maps', 'CryptoKit', 'iCloud'],
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas accumsan lacus vel facilisis volutpat est velit egestas.',
-  },
-];
+import Typography from '@mui/material/Typography';
+import { Skillset } from '../../Skillset/Skillset';
 
 export const Panel = () => {
   return (
-    <Stack spacing={0} alignItems="flex-start">
-      <Stack direction="row" spacing={4}>
-        <Stack spacing={2} alignItems="flex-start">
-          <Box>
-            <h1 style={{ fontWeight: '800', fontSize: '3vw', margin: 0 }}>
-              {projects[0].title}
-            </h1>
-            <h3 style={{ fontWeight: '500', fontSize: '1.75vw', margin: 0 }}>
-              {projects[0].platform}
-            </h3>
-            <img
-              src={projects[0].icon}
-              alt="Project Icon"
-              height={'240px'}
-              style={{ borderRadius: '10px' }}
-            />
-          </Box>
-        </Stack>
-        <Stack spacing={2}>
-          <h2 style={{ fontWeight: '400', fontSize: '2vw', margin: 0 }}>
-            Technologies and APIs Involved
-          </h2>
-          <List dense={true}>
-            {projects[0].apis.map((api) => (
-              <ListItem>
-                <ListItemText primary={api} />
-              </ListItem>
-            ))}
-          </List>
-          <p>{projects[0].description}</p>
-        </Stack>
-      </Stack>
-    </Stack>
+    <Box display="flex" flex={1} flexDirection={'column'}>
+      <Box
+        display={'flex'}
+        flexDirection={'row'}
+        overflowx="scroll"
+        width={'100%'}
+        // bgcolor={'green'}
+      >
+        <Grid
+          container
+          direction="row"
+          alignItems={'flex-end'}
+          justifyContent={'space-between'}
+        >
+          <Grid item xs={12} md={8}>
+            <Stack spacing={2} alignItems="flex-start" px={5}>
+              <Typography variant="sectionHeader">
+                Security & Privacy
+              </Typography>
+              <Typography variant="sectionSubtitle">'Hello, Friend'</Typography>
+              <Typography variant="sectionContent" fontWeight={'light'}>
+                It is high time society stopped being naïve about the challenges
+                facing our privacy and security, and started taking an active
+                role in cybersecurity. At the core of everything I build, I plan
+                with security from the ground up. Whether to protect business
+                interests, intellectual property, or protecting the very users
+                who entrust us with their data, everyone is better off when
+                ethical security is incorporated into the products we build.
+              </Typography>
+            </Stack>
+            <Stack spacing={0} px={5}>
+              <h2>Supporting Skills</h2>
+              <Stack
+                direction="row"
+                rowGap={2}
+                spacing={2}
+                sx={{ flexWrap: 'wrap' }}
+              >
+                <Skillset title="Machine Learning" />
+                <Skillset title="Cybersecurity" />
+                <Skillset title="AR/VR" />
+              </Stack>
+            </Stack>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            {/* Image */}
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
   );
 };
