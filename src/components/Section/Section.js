@@ -14,14 +14,20 @@ import { Panel } from '../Slideshow/Panel/Panel';
 import { Toolkit } from '../Slideshow/Toolkit/Toolkit';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import { Education } from '../Slideshow/Education/Education';
+import Container from '@mui/material/Container';
+import { Pagination } from '@mui/material';
 
 const subtitle = 'Toolkit'; // Portfolio
 
 export const Section = (props) => {
   return (
-    <Box
+    <Stack
+      direction={'column'}
+      minHeight={'100vh'}
+      id={props.section.header}
       sx={{
-        backgroundColor: 'black',
+        backgroundColor: 'pink',
       }}
     >
       <Grid
@@ -33,7 +39,7 @@ export const Section = (props) => {
         py={2.5}
       >
         {/* Section Header */}
-        <Grid item xs={props.section === 'Résumé' ? 8 : 12}>
+        <Grid item xs={props.section.header === 'Résumé' ? 8 : 12}>
           <Stack direction="row" spacing={1} alignItems="center">
             <Box
               sx={{
@@ -50,7 +56,7 @@ export const Section = (props) => {
                   textTransform: 'uppercase',
                 }}
               >
-                {props.section}
+                {props.section.header}
               </p>
             </Box>
             <Stack direction="row" spacing={3} alignItems="center">
@@ -60,12 +66,14 @@ export const Section = (props) => {
                   width: '20px',
                 }}
               />
-              <p style={{ fontWeight: 'bold', margin: 0 }}>{subtitle}</p>
+              <p style={{ fontWeight: 'bold', margin: 0 }}>
+                {props.section.subheaders[0]}
+              </p>
             </Stack>
           </Stack>
         </Grid>
         {/* Section Data */}
-        {props.section === 'Résumé' ? (
+        {props.section.header === 'Résumé' ? (
           <Grid item xs={4}>
             <Button
               variant="contained"
@@ -76,52 +84,64 @@ export const Section = (props) => {
           </Grid>
         ) : null}
       </Grid>
-
-      <Stack spacing={2} alignItems="flex-start">
-        <Root />
-        {/* <Panel /> */}
-        {/* <Toolkit /> */}
+      {props.section.header === 'Résumé' ? <Education /> : <Root />}
+      {/* <Root /> */}
+      {/* <Panel /> */}
+      {/* <Toolkit /> */}
+      <Stack alignItems={'center'} py={1.5}>
+        <Pagination
+          count={4}
+          variant="outlined"
+          size="large"
+          color="secondary"
+        />
       </Stack>
-      {/* <Fab
-        variant="extended"
-        style={{
-          fontWeight: 'bold',
-          position: 'absolute',
-          left: '60px',
-          bottom: '60px',
-          backgroundColor: 'transparent',
-          color: 'gray',
-          border: '1px solid gray',
-          borderRadius: '10px',
-        }}
+      {/* <Grid
+        container
+        direction="row"
+        justifyContent={'space-between'}
+        sx={{ backgroundColor: 'red' }}
+        px={5}
       >
-        <ChevronLeftIcon
-          style={{
-            height: '16px',
-            width: '16px',
-          }}
-        />
-        Back
-      </Fab> */}
-      {/* <Fab
-        variant="extended"
-        className="right right-1"
-        style={{
-          fontWeight: 'bold',
-          position: 'relative',
-          right: '60px',
-          bottom: '60px',
-          borderRadius: '10px',
-        }}
-      >
-        Next
-        <ChevronRightIcon
-          style={{
-            height: '16px',
-            width: '16px',
-          }}
-        />
-      </Fab> */}
-    </Box>
+        <Grid item xs={3} sx={{ backgroundColor: 'green' }}>
+          <Fab
+            variant="extended"
+            style={{
+              fontWeight: 'bold',
+              backgroundColor: 'transparent',
+              color: 'gray',
+              border: '1px solid gray',
+              borderRadius: '10px',
+            }}
+          >
+            <ChevronLeftIcon
+              style={{
+                height: '16px',
+                width: '16px',
+              }}
+            />
+            Back
+          </Fab>
+        </Grid>
+        <Grid item xs={3} sx={{ backgroundColor: 'purple' }}>
+          <Fab
+            variant="extended"
+            className="right right-1"
+            style={{
+              fontWeight: 'bold',
+              borderRadius: '10px',
+            }}
+          >
+            Next
+            <ChevronRightIcon
+              style={{
+                height: '16px',
+                width: '16px',
+              }}
+            />
+          </Fab>
+        </Grid>
+      </Grid> */}
+    </Stack>
   );
 };

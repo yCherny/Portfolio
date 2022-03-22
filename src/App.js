@@ -5,7 +5,15 @@ import { Landing } from './components/Landing/Landing';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Section } from './components/Section/Section';
 
-const sections = ['Skills', 'Principles', 'Résumé'];
+// Temporary Hard Coded Data
+const sections = [
+  { header: 'Development', subheaders: ['Stack', 'Portfolio', 'Skills'] },
+  { header: 'Principles', subheaders: ['Design', 'Security', 'Privacy'] },
+  {
+    header: 'Résumé',
+    subheaders: ['Education', 'Miscellaneous', 'Work Experience'],
+  },
+];
 
 function App() {
   return (

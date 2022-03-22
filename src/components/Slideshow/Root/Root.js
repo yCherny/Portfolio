@@ -2,13 +2,19 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { Skillset } from '../../Skillset/Skillset';
 
 export const Root = () => {
   return (
-    <Stack spacing={0} alignItems="flex-start">
+    <Box
+      bgcolor="red"
+      display="flex"
+      flex={1}
+      flexDirection={{ xs: 'column', sm: 'row' }}
+    >
       <Grid
         container
         direction="row"
@@ -17,13 +23,11 @@ export const Root = () => {
       >
         <Grid item xs={12} md={5}>
           <Stack spacing={2} alignItems="flex-start" px={5}>
-            <Typography variant="header" style={{ fontWeight: '400' }}>
-              FRONT-END DEVELOPMENT
-            </Typography>
-            <Typography variant="subtitle" style={{ fontWeight: '400' }}>
+            <Typography variant="header">FRONT-END DEVELOPMENT</Typography>
+            <Typography variant="subtitle">
               "Good design makes a product useful" - Dieter Rams
             </Typography>
-            <Typography variant="content" style={{ fontWeight: '400' }}>
+            <Typography variant="content">
               Although I am capable of working in any environment, I prefer to
               work on the front-end, having a direct impact on the user
               experience. I enjoy building beautiful user interfaces with
@@ -32,7 +36,7 @@ export const Root = () => {
             </Typography>
           </Stack>
         </Grid>
-        <Grid item xs={12} md={5}>
+        {/* <Grid item xs={12} md={5}>
           <Stack direction={'row'} height={'100wh'} px={5}>
             <Stack spacing={2} style={{ textAlign: 'end' }}>
               <Typography variant="header" style={{ fontWeight: '400' }}>
@@ -50,7 +54,7 @@ export const Root = () => {
               </Typography>
             </Stack>
           </Stack>
-        </Grid>
+        </Grid> */}
       </Grid>
       <Stack spacing={0} px={5}>
         <h2>Supporting Skills</h2>
@@ -60,6 +64,6 @@ export const Root = () => {
           <Skillset title="AR/VR" />
         </Stack>
       </Stack>
-    </Stack>
+    </Box>
   );
 };

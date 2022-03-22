@@ -21,7 +21,7 @@ export const theme = createTheme({
       main: '#FFFFFF',
     },
     secondary: {
-      main: '#f50057',
+      main: '#33B587',
     },
     text: {
       primary: 'rgba(255,255,255,0.87)',
@@ -35,6 +35,11 @@ export const theme = createTheme({
           style: {
             border: '3px solid white',
             borderRadius: '10px',
+            '&:hover': {
+              border: '3px solid #33B587',
+              backgroundColor: '#33B587',
+              fontWeight: '800',
+            },
           },
         },
         {

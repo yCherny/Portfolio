@@ -6,11 +6,12 @@ import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
 import profilePic from '../../images/profilePic.jpeg';
 import background from '../../images/background.svg';
-import { SearchIcon } from '@heroicons/react/solid';
+import { SearchIcon, ArrowDownIcon } from '@heroicons/react/solid';
 import { Links } from '../Links/Links';
 import Typography from '@mui/material/Typography';
 import { Skillset } from '../Skillset/Skillset';
 import './style.css';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export const Landing = () => {
   return (
@@ -83,25 +84,34 @@ export const Landing = () => {
                 spacing={2}
                 sx={{ flexWrap: 'wrap' }}
               >
-                <Skillset title="Front-End Development" />
+                {/* <Skillset title="Front-End Development" />
                 <Skillset title="Mobile Development" />
-                <Skillset title="Application Security" />
+                <Skillset title="Application Security" /> */}
+                <AnchorLink href="#Development">
+                  <Button variant="outlined">Development</Button>
+                </AnchorLink>
+                <AnchorLink href="#Principles">
+                  <Button variant="outlined">Principles</Button>
+                </AnchorLink>
+                <AnchorLink href="#Résumé">
+                  <Button variant="outlined">Résumé</Button>
+                </AnchorLink>
               </Stack>
               <Links />
             </Stack>
           </Stack>
         </Grid>
       </Grid>
-      {/* <ArrowDownIcon
+      <ArrowDownIcon
         className="box bounce-1"
-        height={{ xs: 10, md: '1.75vw' }}
-        width={{ xs: 10, md: '1.75vw' }}
+        height={20}
+        width={20}
         style={{
-          position: 'absolute',
           left: '50vw',
+          position: 'absolute',
           bottom: '10px',
         }}
-      /> */}
+      />
     </Stack>
   );
 };
