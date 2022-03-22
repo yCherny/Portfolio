@@ -50,12 +50,7 @@ export const Landing = () => {
         {/* Data */}
         <Grid item xs={12} md={6}>
           <Stack spacing={2} alignItems="flex-start">
-            <Button
-              variant="rounded"
-              startIcon={<SearchIcon height={25} width={25} />}
-            >
-              Open to Work
-            </Button>
+            <Button variant="rounded">Open to Work</Button>
             <AnchorLink href={'#Landing'}>
               <Button variant="pageSection">YEGOR CHERNYSHEV</Button>
             </AnchorLink>

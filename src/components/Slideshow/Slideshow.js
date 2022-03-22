@@ -1,19 +1,27 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import { Root } from './Root/Root';
 import { Panel } from './Panel/Panel';
-import { Education } from './Education/Education';
-const panels = ['red', 'green', 'blue', 'purple'];
-{
-  /* {props.section.header === 'Résumé' ? <Education /> : <Root />} */
-  /* <Root /> */
-  /* <Panel /> */
-  /* <Toolkit /> */
+import { Portfolio } from './Portfolio/Portfolio';
+import { Bulletin } from './Bulletin/Bulletin';
+import { Experience } from './Experience/Experience';
+
+function getPage(identifier) {
+  switch (identifier.type) {
+    case 'Panel':
+      return <Panel page={identifier} />;
+    case 'Portfolio':
+      return <Portfolio page={identifier} />;
+    case 'Experience':
+      return <Experience page={identifier} />;
+    case 'Bulletin':
+      return <Bulletin page={identifier} />;
+    default:
+      break;
+  }
 }
 
-export const Slideshow = () => {
+export const Slideshow = (props) => {
   return (
-    // Container
     <Box
       display="flex"
       flex={2}
@@ -21,12 +29,11 @@ export const Slideshow = () => {
       width={'100vw'}
       overflow={'hidden'}
     >
-      {panels.map((panel) => (
+      {props.section.pages.map((page) => (
         <Box flexShrink={0} width={'100%'}>
-          <Panel />
+          {getPage(page)}
         </Box>
       ))}
-      ;
     </Box>
   );
 };

@@ -55,7 +55,7 @@ const data = [
   },
 ];
 
-export const Education = () => {
+export const Experience = (props) => {
   return (
     <Stack spacing={0} alignItems="flex-start">
       <Grid
@@ -137,7 +137,6 @@ export const Education = () => {
             </Stack>
           </Grid>
         ))}
-        ;
       </Grid>
     </Stack>
   );

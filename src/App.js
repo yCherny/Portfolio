@@ -7,14 +7,29 @@ import { Section } from './components/Section/Section';
 
 // Temporary Hard Coded Data
 const sections = [
-  { header: 'Development', subheaders: ['Stack', 'Portfolio', 'Skills'] },
+  {
+    header: 'Development',
+    pages: [
+      { title: 'Portfolio',  type: 'Portfolio' },
+      { title: 'Stack',  type: 'Panel' },
+      { title: 'Skills',  type: 'Bulletin' },
+    ],
+  },
   {
     header: 'Principles',
-    subheaders: ['Design', 'Security & Privacy', 'Accessibility'],
+    pages: [
+      { title: 'Design',  type: 'Panel' },
+      { title: 'Security & Privacy',  type: 'Panel' },
+      { title: 'Accessibility',  type: 'Panel' },
+    ],
   },
   {
     header: 'Résumé',
-    subheaders: ['Education', 'Miscellaneous', 'Work Experience'],
+    pages: [
+      { title: 'Education',  type: 'Experience' },
+      { title: 'Work Experience',  type: 'Experience' },
+      { title: 'Miscellaneous',  type: 'Bulletin' },
+    ],
   },
 ];
 
@@ -26,7 +41,6 @@ function App() {
       {sections.map((section) => (
         <Section section={section} />
       ))}
-      ;
       <Footer />
     </ThemeProvider>
   );

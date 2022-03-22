@@ -38,7 +38,7 @@ const languages = [
   },
 ];
 
-export const Toolkit = () => {
+export const Bulletin = (props) => {
   return (
     <Stack direction="row" spacing={4}>
       <Stack spacing={2}>

@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { Skillset } from '../../Skillset/Skillset';
 
-export const Panel = () => {
+export const Panel = (props) => {
   return (
     <Box display="flex" flex={1} flexDirection={'column'}>
       <Box

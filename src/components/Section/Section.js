@@ -15,11 +15,6 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-import { Root } from '../Slideshow/Root/Root';
-import { Panel } from '../Slideshow/Panel/Panel';
-import { Toolkit } from '../Slideshow/Toolkit/Toolkit';
-import { Education } from '../Slideshow/Education/Education';
-
 export const Section = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -97,7 +92,7 @@ export const Section = (props) => {
                 }}
               />
               <p style={{ fontWeight: 'bold', margin: 0 }}>
-                {props.section.subheaders[0]}
+                {props.section.pages[0].title}
               </p>
             </Stack>
           </Stack>
@@ -114,10 +109,10 @@ export const Section = (props) => {
           </Grid>
         ) : null}
       </Grid>
-      <Slideshow />
+      <Slideshow section={props.section} />
       <Stack alignItems={'center'} py={1.5}>
         <Pagination
-          count={props.section.subheaders.length}
+          count={props.section.pages.length}
           variant="outlined"
           size="large"
           color="secondary"
