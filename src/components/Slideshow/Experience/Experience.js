@@ -6,12 +6,17 @@ import {
   LibraryIcon,
   PresentationChartLineIcon,
   TerminalIcon,
+  ChevronDownIcon,
 } from '@heroicons/react/solid';
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import { colors } from '../../../Theme';
 
 const data = [
   {
@@ -21,7 +26,7 @@ const data = [
     school: 'Tandon School of Engineering',
     graduation: 'Expected Spring 2023',
     gpa: undefined,
-    tint: '#33B587',
+    tint: `${colors[0]}`,
     coursework: [
       'Infosec and Privacy',
       'Discrete Mathematics',
@@ -38,7 +43,7 @@ const data = [
     school: 'Weissman School of Arts and Science',
     graduation: 'Graduated Summer 2019',
     gpa: 'GPA: 3.81',
-    tint: '#33B587',
+    tint: `${colors[1]}`,
     coursework: [
       'Advanced Micro and Macroeconomics',
       'Econometrics',
@@ -67,34 +72,6 @@ export const Experience = (props) => {
         {data.map((education) => (
           <Grid item xs={12} md={5}>
             <Stack spacing={2} alignItems="flex-start" px={5}>
-              <Stack direction={'row'} spacing={2}>
-                <Button
-                  variant={'contained'}
-                  startIcon={<LibraryIcon height={18} width={18} />}
-                  sx={{
-                    color: 'white',
-                    backgroundColor: `${education.tint}`,
-                  }}
-                >
-                  {education.degree}
-                </Button>
-                <Button
-                  variant={'contained'}
-                  startIcon={
-                    education.specialization === 'Computer Science' ? (
-                      <TerminalIcon height={18} width={18} />
-                    ) : (
-                      <PresentationChartLineIcon height={18} width={18} />
-                    )
-                  }
-                  sx={{
-                    color: 'white',
-                    backgroundColor: `${education.tint}`,
-                  }}
-                >
-                  {education.specialization}
-                </Button>
-              </Stack>
               <Stack spacing={1}>
                 <Typography variant="sectionHeader">
                   {education.college}
@@ -102,6 +79,34 @@ export const Experience = (props) => {
                 <Typography variant="sectionSubtitle" fontWeight={600}>
                   {education.school}
                 </Typography>
+                <Stack direction={'row'} spacing={2}>
+                  <Button
+                    variant={'contained'}
+                    startIcon={<LibraryIcon height={18} width={18} />}
+                    sx={{
+                      color: 'white',
+                      backgroundColor: `${education.tint}`,
+                    }}
+                  >
+                    {education.degree}
+                  </Button>
+                  <Button
+                    variant={'contained'}
+                    startIcon={
+                      education.specialization === 'Computer Science' ? (
+                        <TerminalIcon height={18} width={18} />
+                      ) : (
+                        <PresentationChartLineIcon height={18} width={18} />
+                      )
+                    }
+                    sx={{
+                      color: 'white',
+                      backgroundColor: `${education.tint}`,
+                    }}
+                  >
+                    {education.specialization}
+                  </Button>
+                </Stack>
                 <Typography
                   variant="sectionSubtitle"
                   style={{ color: 'gray', fontWeight: 'lighter' }}
@@ -116,24 +121,37 @@ export const Experience = (props) => {
                     {education.gpa}
                   </Typography>
                 ) : null}
-                <Divider color={'#414141'} />
+                <Divider color={'#414141'} style={{ width: '100%' }} />
               </Stack>
-
-              <Stack spacing={2}>
-                <Typography
-                  variant="sectionSubtitle"
-                  style={{ fontWeight: '400' }}
+              <Accordion style={{ width: '100%' }}>
+                <AccordionSummary
+                  expandIcon={
+                    <ChevronDownIcon
+                      color="white"
+                      style={{ height: '30px', width: '30px' }}
+                    />
+                  }
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                  style={{ backgroundColor: '#1A1A1A' }}
                 >
-                  Relevant Coursework
-                </Typography>
-                <List spacing={0}>
-                  {education.coursework.map((course) => (
-                    <ListItem>
-                      <ListItemText primary={course} />
-                    </ListItem>
-                  ))}
-                </List>
-              </Stack>
+                  <Typography
+                    variant="sectionSubtitle"
+                    style={{ fontWeight: '400' }}
+                  >
+                    Relevant Coursework
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails style={{ backgroundColor: '#111111' }}>
+                  <List spacing={0}>
+                    {education.coursework.map((course) => (
+                      <ListItem>
+                        <ListItemText primary={course} />
+                      </ListItem>
+                    ))}
+                  </List>
+                </AccordionDetails>
+              </Accordion>
             </Stack>
           </Grid>
         ))}

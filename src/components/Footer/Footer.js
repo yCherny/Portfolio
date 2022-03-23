@@ -3,21 +3,21 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { Links } from '../Links/Links';
-import footerBackground from '../../images/footerBackground.svg';
-
+import background from '../../images/background.svg';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 export const Footer = () => {
   return (
     <Stack
+      id={'Contact'}
       spacing={2}
       alignItems={{ xs: 'flex-start', md: 'center' }}
       p={{ xs: 5, md: 10 }}
       sx={{
-        backgroundImage: `url(${footerBackground})`,
+        backgroundImage: `url(${background})`,
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'center',
+        backgroundSize: 'cover',
       }}
     >
       <Typography variant="header" style={{ fontWeight: '400' }}>

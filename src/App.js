@@ -10,25 +10,25 @@ const sections = [
   {
     header: 'Development',
     pages: [
-      { title: 'Portfolio',  type: 'Portfolio' },
-      { title: 'Stack',  type: 'Panel' },
-      { title: 'Skills',  type: 'Bulletin' },
+      { title: 'Portfolio', type: 'Portfolio' },
+      { title: 'Stack', type: 'Panel' },
+      { title: 'Skills', type: 'Bulletin' },
     ],
   },
   {
     header: 'Principles',
     pages: [
-      { title: 'Design',  type: 'Panel' },
-      { title: 'Security & Privacy',  type: 'Panel' },
-      { title: 'Accessibility',  type: 'Panel' },
+      { title: 'Design', type: 'Panel' },
+      { title: 'Security & Privacy', type: 'Panel' },
+      { title: 'Accessibility', type: 'Panel' },
     ],
   },
   {
     header: 'Résumé',
     pages: [
-      { title: 'Education',  type: 'Experience' },
-      { title: 'Work Experience',  type: 'Experience' },
-      { title: 'Miscellaneous',  type: 'Bulletin' },
+      { title: 'Education', type: 'Experience' },
+      { title: 'Work Experience', type: 'Experience' },
+      { title: 'Miscellaneous', type: 'Bulletin' },
     ],
   },
 ];
@@ -37,7 +37,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Landing />
+      {/* <Landing /> */}
       {sections.map((section) => (
         <Section section={section} />
       ))}

@@ -14,8 +14,12 @@ import { usePagination } from '@mui/material/Pagination';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { useSelector, useDispatch } from 'react-redux';
+import { moveTo } from '../../features/pagination/paginationSlice';
 
 export const Section = (props) => {
+  const dispatch = useDispatch();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -27,7 +31,7 @@ export const Section = (props) => {
 
   const [page, setPage] = React.useState(1);
   const handleChange = (event, value) => {
-    console.log(value);
+    dispatch(moveTo(value - 1));
     setPage(value);
   };
 
@@ -83,6 +87,11 @@ export const Section = (props) => {
                   Résumé
                 </MenuItem>
               </AnchorLink>
+              <AnchorLink href={'#Contact'}>
+                <MenuItem onClick={handleClose} variant="menuOption">
+                  Contact
+                </MenuItem>
+              </AnchorLink>
             </Menu>
             <Stack direction="row" spacing={3} alignItems="center">
               <ChevronRightIcon
@@ -109,7 +118,7 @@ export const Section = (props) => {
           </Grid>
         ) : null}
       </Grid>
-      <Slideshow section={props.section} />
+      <Slideshow section={props.section} page={page} />
       <Stack alignItems={'center'} py={1.5}>
         <Pagination
           count={props.section.pages.length}

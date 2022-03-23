@@ -4,39 +4,26 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 // import { Links } from '../Links/Links';
-import profilePic from '../../../images/profilePic.jpeg';
 import rally from '../../../images/rally.png';
+import rallyIcon from '../../../images/rallyIcon.png';
+import ycLogo from '../../../images/ycLogo.png';
 import portfolio from '../../../images/portfolio.png';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 import { Skillset } from '../../Skillset/Skillset';
-
-const colors = [
-  '#F72585',
-  '#B5179E',
-  '#7209B7',
-  '#560BAD',
-  '#480CA8',
-  '#3A0CA3',
-  '#3F37C9',
-  '#4361EE',
-  '#4895EF',
-  '#4CC9F0',
-];
+import { colors } from '../../../Theme';
 
 const projects = [
   {
-    title: 'Rally',
-    platform: 'iOS',
-    icon: profilePic,
+    title: 'TBD',
+    platform: 'PWA, React Native, iOS, Web, Android',
+    icon: rallyIcon,
     showcase: rally,
     apis: [
       'Google Firebase',
-      'Apple Maps',
-      'CryptoKit',
-      'iCloud',
+      'React',
+      'React Native',
+      'Redux',
+      'Mapbox',
       'XCode',
       'AdMob',
       'CocoaTouch',
@@ -46,6 +33,41 @@ const projects = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas accumsan lacus vel facilisis volutpat est velit egestas.',
   },
+  // {
+  //   title: 'Rally',
+  //   platform: 'iOS',
+  //   icon: rallyIcon,
+  //   showcase: rally,
+  //   apis: [
+  //     'Google Firebase',
+  //     'Apple Maps',
+  //     'CryptoKit',
+  //     'iCloud',
+  //     'XCode',
+  //     'AdMob',
+  //     'CocoaTouch',
+  //     'Native',
+  //     'PushNotifications',
+  //   ],
+  //   description:
+  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas accumsan lacus vel facilisis volutpat est velit egestas.',
+  // },
+  // {
+  //   title: 'This Site',
+  //   platform: 'Web',
+  //   icon: ycLogo,
+  //   showcase: portfolio,
+  //   apis: [
+  //     'Google Firebase',
+  //     'ReactJS',
+  //     'Redux',
+  //     'MUI',
+  //     'TypeScript',
+  //     'Tailwind CSS',
+  //   ],
+  //   description:
+  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas accumsan lacus vel facilisis volutpat est velit egestas.',
+  // },
 ];
 
 export const Portfolio = (props) => {
@@ -55,19 +77,28 @@ export const Portfolio = (props) => {
       direction="row"
       alignItems={'flex-end'}
       justifyContent={'space-between'}
+      rowGap={2}
     >
       <Grid item xs={12} md={5}>
-        <Stack spacing={2} alignItems="flex-start">
-          <Typography variant="sectionHeader">{projects[0].title}</Typography>
-          <Typography variant="sectionSubtitle">
-            {projects[0].platform}
-          </Typography>
+        <Stack spacing={2} alignItems="center" px={5}>
+          <Stack alignItems={'flex-start'} width={'100%'}>
+            <Typography variant="sectionHeader" fontWeight={'800'}>
+              {projects[0].title}
+            </Typography>
+            <Typography
+              variant="sectionSubtitle"
+              fontWeight={'600'}
+              color={'gray'}
+            >
+              {projects[0].platform}
+            </Typography>
+          </Stack>
           <Stack alignItems={'center'}>
-            <Stack direction={'row'} spacing={-15}>
+            <Stack direction={'row'} spacing={-8}>
               <img
                 src={projects[0].showcase}
                 alt="Project Showcase"
-                height={'400px'}
+                height={'300vh'}
               />
               <img
                 src={projects[0].icon}
@@ -84,23 +115,24 @@ export const Portfolio = (props) => {
         </Stack>
       </Grid>
       <Grid item xs={12} md={5}>
-        <Typography variant="sectionContent" fontWeight={'light'}></Typography>
-
-        <p>{projects[0].description}</p>
-        <Stack spacing={2}>
-          <h2 style={{ fontWeight: '400', fontSize: '2vw', margin: 0 }}>
-            Tech Stack
-          </h2>
-          <Stack
-            direction="row"
-            justifyContent={{ xs: 'center', md: 'flex-start' }}
-            rowGap={2}
-            spacing={2}
-            sx={{ flexWrap: 'wrap' }}
-          >
-            {projects[0].apis.map((tech, index) => (
-              <Skillset title={tech} color={colors[index]} />
-            ))}
+        <Stack rowGap={2}>
+          <Stack textAlign={{ xs: 'center', md: 'start' }} px={5}>
+            <Typography variant="sectionContent" fontWeight={'light'}>
+              {projects[0].description}
+            </Typography>
+          </Stack>
+          <Stack spacing={2}>
+            <Stack
+              direction="row"
+              justifyContent={{ xs: 'center', md: 'flex-start' }}
+              rowGap={2}
+              spacing={2}
+              sx={{ flexWrap: 'wrap' }}
+            >
+              {projects[0].apis.map((tech, index) => (
+                <Skillset title={tech} color={colors[index]} />
+              ))}
+            </Stack>
           </Stack>
         </Stack>
       </Grid>

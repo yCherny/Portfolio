@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { Skillset } from '../../Skillset/Skillset';
+import { colors } from '../../../Theme';
 
 export const Panel = (props) => {
   return (
@@ -46,9 +47,9 @@ export const Panel = (props) => {
                 spacing={2}
                 sx={{ flexWrap: 'wrap' }}
               >
-                <Skillset title="Machine Learning" />
-                <Skillset title="Cybersecurity" />
-                <Skillset title="AR/VR" />
+                <Skillset title="Machine Learning" color={colors[0]} />
+                <Skillset title="Cybersecurity" color={colors[1]} />
+                <Skillset title="AR/VR" color={colors[2]} />
               </Stack>
             </Stack>
           </Grid>
