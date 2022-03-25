@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+
 import Stack from '@mui/material/Stack';
 import {
   LibraryIcon,
@@ -28,12 +30,12 @@ const data = [
     gpa: undefined,
     tint: `${colors[0]}`,
     coursework: [
+      'Foundations of Computer Science',
       'Infosec and Privacy',
-      'Discrete Mathematics',
-      'Introduction to Machine Learning',
-      'Algorithms and Data Structures I',
+      'Machine Learning',
+      'Design and Analysis of Algorithms',
       'Computer Networking',
-      'Operating Systems',
+      'Intro to Operating Systems',
     ],
   },
   {
@@ -66,64 +68,82 @@ export const Experience = (props) => {
       <Grid
         container
         direction="row"
-        alignItems={'flex-end'}
-        justifyContent={'space-between'}
+        alignItems={'flex-start'}
+        justifyContent="center"
+        rowGap={{ xs: 5, md: 0 }}
       >
         {data.map((education) => (
-          <Grid item xs={12} md={5}>
-            <Stack spacing={2} alignItems="flex-start" px={5}>
+          <Grid item xs={12} md={8} lg={4}>
+            <Stack spacing={2} px={5}>
               <Stack spacing={1}>
-                <Typography variant="sectionHeader">
-                  {education.college}
-                </Typography>
-                <Typography variant="sectionSubtitle" fontWeight={600}>
-                  {education.school}
-                </Typography>
+                <Stack>
+                  <Typography variant="sectionHeader">
+                    {education.college}
+                  </Typography>
+                  <Typography variant="sectionSubtitle">
+                    {education.school}
+                  </Typography>
+                </Stack>
+
                 <Stack direction={'row'} spacing={2}>
-                  <Button
-                    variant={'contained'}
-                    startIcon={<LibraryIcon height={18} width={18} />}
-                    sx={{
-                      color: 'white',
-                      backgroundColor: `${education.tint}`,
-                    }}
+                  <Typography
+                    variant="sectionSubtitle"
+                    style={{ color: 'gray', fontWeight: '400' }}
                   >
-                    {education.degree}
-                  </Button>
-                  <Button
-                    variant={'contained'}
-                    startIcon={
-                      education.specialization === 'Computer Science' ? (
+                    {education.graduation}
+                  </Typography>
+                  {education.gpa !== undefined ? (
+                    <Typography
+                      variant="sectionSubtitle"
+                      style={{ fontWeight: '400' }}
+                    >
+                      {education.gpa}
+                    </Typography>
+                  ) : null}
+                </Stack>
+                <Stack direction={'row'} spacing={1.5}>
+                  <Box
+                    px={1.5}
+                    py={0.75}
+                    bgcolor={education.tint}
+                    sx={{ borderRadius: '5px' }}
+                  >
+                    <Stack direction={'row'} alignItems={'center'} spacing={1}>
+                      <LibraryIcon height={18} width={18} />
+                      <Typography
+                        variant="skillset"
+                        textTransform={'uppercase'}
+                        style={{ fontWeight: '800' }}
+                      >
+                        {education.degree}
+                      </Typography>
+                    </Stack>
+                  </Box>
+                  <Box
+                    px={1.5}
+                    py={0.75}
+                    bgcolor={education.tint}
+                    sx={{ borderRadius: '5px' }}
+                  >
+                    <Stack direction={'row'} alignItems={'center'} spacing={1}>
+                      {education.specialization === 'Computer Science' ? (
                         <TerminalIcon height={18} width={18} />
                       ) : (
                         <PresentationChartLineIcon height={18} width={18} />
-                      )
-                    }
-                    sx={{
-                      color: 'white',
-                      backgroundColor: `${education.tint}`,
-                    }}
-                  >
-                    {education.specialization}
-                  </Button>
+                      )}
+                      <Typography
+                        variant="skillset"
+                        textTransform={'uppercase'}
+                        style={{ fontWeight: '800' }}
+                      >
+                        {education.specialization}
+                      </Typography>
+                    </Stack>
+                  </Box>
                 </Stack>
-                <Typography
-                  variant="sectionSubtitle"
-                  style={{ color: 'gray', fontWeight: 'lighter' }}
-                >
-                  {education.graduation}
-                </Typography>
-                {education.gpa !== undefined ? (
-                  <Typography
-                    variant="sectionSubtitle"
-                    style={{ fontWeight: '400' }}
-                  >
-                    {education.gpa}
-                  </Typography>
-                ) : null}
                 <Divider color={'#414141'} style={{ width: '100%' }} />
               </Stack>
-              <Accordion style={{ width: '100%' }}>
+              <Accordion style={{ borderRadius: '10px' }}>
                 <AccordionSummary
                   expandIcon={
                     <ChevronDownIcon
@@ -133,20 +153,17 @@ export const Experience = (props) => {
                   }
                   aria-controls="panel1a-content"
                   id="panel1a-header"
-                  style={{ backgroundColor: '#1A1A1A' }}
+                  style={{ backgroundColor: '#111111' }}
                 >
-                  <Typography
-                    variant="sectionSubtitle"
-                    style={{ fontWeight: '400' }}
-                  >
-                    Relevant Coursework
+                  <Typography variant="accordion" style={{ fontWeight: '600' }}>
+                    Coursework
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails style={{ backgroundColor: '#111111' }}>
                   <List spacing={0}>
                     {education.coursework.map((course) => (
                       <ListItem>
-                        <ListItemText primary={course} />
+                        <Typography variant="accordion">• {course}</Typography>
                       </ListItem>
                     ))}
                   </List>

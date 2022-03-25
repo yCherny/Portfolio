@@ -37,16 +37,9 @@ export const Section = (props) => {
 
   return (
     <Stack direction={'column'} minHeight={'100vh'} id={props.section.header}>
-      <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems={{ md: 'center' }}
-        px={5}
-        py={2.5}
-      >
+      <Grid container direction="row" justifyContent="center" px={5} py={2.5}>
         {/* Section Header */}
-        <Grid item xs={props.section.header === 'Résumé' ? 8 : 12}>
+        <Grid item xs={props.section.header === 'Résumé' ? 7 : 12}>
           <Stack direction="row" spacing={1} alignItems="center">
             <Button
               variant="pageSection"
@@ -108,13 +101,15 @@ export const Section = (props) => {
         </Grid>
         {/* Section Data */}
         {props.section.header === 'Résumé' ? (
-          <Grid item xs={4}>
-            <Button
-              variant="contained"
-              startIcon={<DocumentDownloadIcon height={25} width={25} />}
-            >
-              DOWNLOAD
-            </Button>
+          <Grid item xs={5}>
+            <Stack direction="row-reverse">
+              <Button
+                variant="contained"
+                startIcon={<DocumentDownloadIcon height={25} width={25} />}
+              >
+                DOWNLOAD
+              </Button>
+            </Stack>
           </Grid>
         ) : null}
       </Grid>

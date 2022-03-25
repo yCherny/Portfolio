@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import { Panel } from './Panel/Panel';
 import { Portfolio } from './Portfolio/Portfolio';
+import { SubPortfolio } from './Portfolio/SubPortfolio';
 import { Bulletin } from './Bulletin/Bulletin';
 import { Experience } from './Experience/Experience';
 import { useSelector } from 'react-redux';
@@ -14,6 +15,8 @@ function getPage(identifier) {
       return <Panel page={identifier} />;
     case 'Portfolio':
       return <Portfolio page={identifier} />;
+    case 'SubPortfolio':
+      return <SubPortfolio page={identifier} />;
     case 'Experience':
       return <Experience page={identifier} />;
     case 'Bulletin':
@@ -37,14 +40,14 @@ export const Slideshow = (props) => {
   // }, [storePage]);
 
   const AnimatedBox = animated(Box);
-  const { scroll } = useSpring({
-    scroll: 100,
-    from: {
-      scroll: 0,
-    },
-    delay: 300,
-    config: config.molasses,
-  });
+  // const { scroll } = useSpring({
+  //   scroll: 100,
+  //   from: {
+  //     scroll: 0,
+  //   },
+  //   delay: 300,
+  //   config: config.molasses,
+  // });
 
   return (
     <AnimatedBox
@@ -53,7 +56,7 @@ export const Slideshow = (props) => {
       flex={2}
       flexDirection={'row'}
       width={'100%'}
-      scrollLeft={scroll}
+      // scrollLeft={scroll}
       style={{ overflowX: 'scroll' }}
       // style={style}
     >

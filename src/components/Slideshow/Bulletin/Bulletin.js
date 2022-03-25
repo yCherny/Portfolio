@@ -4,73 +4,89 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 // import { Links } from '../Links/Links';
-import profilePic from '../../../images/profilePic.jpeg';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import Typography from '@mui/material/Typography';
+import { Skillset } from '../../Skillset/Skillset';
+import { colors } from '../../../Theme';
 
-const operatingSystems = [
+const sections = [
   {
-    os: 'Mac OS',
-    languages: ['Visual Studio Code'],
+    header: 'Programming Languages',
+    subsections: [
+      { title: 'High Proficiency', items: ['JavaScript', 'Swift', 'C++'] },
+      { title: 'Average Proficiency', items: ['Python', 'Java', 'SQL'] },
+      { title: 'Lightly Dabbled In', items: ['C', 'Angular', 'Ruby'] },
+    ],
   },
   {
-    os: 'Windows',
-    languages: ['XCode'],
+    header: 'Design',
+    subsections: [
+      { title: '2D Design', items: ['Adobe XD', 'Illustrator', 'Procreate'] },
+      { title: '3D Modeling', items: ['Autodesk Fusion', 'Blender'] },
+    ],
   },
   {
-    os: 'Linux Kali',
+    header: 'Certificates',
+    subsections: [
+      { title: 'NYU Tandon Bridge', items: ['Certificate'] },
+      {
+        title: 'Codecademy',
+        items: [
+          'Learn Java',
+          'Learn SQL',
+          'Learn React',
+          'Learn JavaScript',
+          'Learn Python 3',
+          'Learn Git & GitHub',
+          'Learn CLI',
+          'Learn AngularJS 1.X',
+          'Learn Responsive Design',
+        ],
+      },
+    ],
   },
-];
-
-const languages = [
   {
-    proficiency: 'High Proficiency',
-    languages: ['JavaScript', 'Swift', 'C++'],
+    header: 'Operating Systems',
+    subsections: [{ title: '', items: ['Mac OS', 'Windows', 'Linux Kali'] }],
   },
   {
-    proficiency: 'Average Proficiency',
-    languages: ['Python', 'Java', 'SQL'],
-  },
-  {
-    proficiency: 'Newly Picked Up',
-    languages: ['C', 'Angular'],
+    header: 'Languages',
+    subsections: [{ title: 'English' }, { title: 'Russian' }],
   },
 ];
 
 export const Bulletin = (props) => {
-  return (
-    <Stack direction="row" spacing={4}>
-      <Stack spacing={2}>
-        <h2 style={{ fontWeight: '400', fontSize: '2vw', margin: 0 }}>
-          Languages
-        </h2>
-        <List dense={true}>
-          {languages.map((level) => (
+  return sections.map((section) => (
+    <List p={1}>
+      <ListItem>
+        <Typography variant="sectionHeader">{section.header}</Typography>
+      </ListItem>
+      <List style={{ paddingLeft: '20px' }}>
+        {section.subsections.map((subsection) => (
+          <>
             <ListItem>
-              <ListItemText primary={level.proficiency} />
-              {level.languages.map((language) => (
-                <ListItem>
-                  <ListItemText primary={language} />
-                </ListItem>
-              ))}
+              <Typography variant="sectionSubtitle">
+                {subsection.title}
+              </Typography>
             </ListItem>
-          ))}
-        </List>
-      </Stack>
-      {/* <Stack spacing={2}>
-        <h2 style={{ fontWeight: '400', fontSize: '2vw', margin: 0 }}>
-          Technologies and APIs Involved
-        </h2>
-        <List dense={true}>
-          {projects[0].apis.map((api) => (
-            <ListItem>
-              <ListItemText primary={api} />
-            </ListItem>
-          ))}
-        </List>
-        <p>{projects[0].description}</p>
-      </Stack> */}
-    </Stack>
-  );
+            <Stack
+              direction="row"
+              justifyContent={'flex-start'}
+              rowGap={2}
+              spacing={2}
+              sx={{ flexWrap: 'wrap', paddingLeft: '40px' }}
+            >
+              {subsection.items !== undefined
+                ? subsection.items.map((element, index) => (
+                    <Skillset title={element} color={colors[index]} />
+                  ))
+                : null}
+            </Stack>
+          </>
+        ))}
+      </List>
+    </List>
+  ));
 };

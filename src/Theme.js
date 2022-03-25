@@ -1,16 +1,29 @@
 import { createTheme } from '@mui/material/styles';
 
+// export const colors = [
+//   '#F72585',
+//   '#B5179E',
+//   '#7209B7',
+//   '#560BAD',
+//   '#480CA8',
+//   '#3A0CA3',
+//   '#3F37C9',
+//   '#4361EE',
+//   '#4895EF',
+//   '#4CC9F0',
+// ];
+
 export const colors = [
-  '#F72585',
-  '#B5179E',
-  '#7209B7',
-  '#560BAD',
-  '#480CA8',
-  '#3A0CA3',
-  '#3F37C9',
-  '#4361EE',
-  '#4895EF',
   '#4CC9F0',
+  '#4895EF',
+  '#4361EE',
+  '#3F37C9',
+  '#3A0CA3',
+  '#480CA8',
+  '#560BAD',
+  '#7209B7',
+  '#B5179E',
+  '#F72585',
 ];
 
 export const theme = createTheme({
@@ -80,6 +93,7 @@ export const theme = createTheme({
           style: {
             borderRadius: '5px',
             fontWeight: 800,
+            fontSize: '1rem',
           },
         },
         {
@@ -115,17 +129,34 @@ export const theme = createTheme({
 theme.typography.header = {
   fontWeight: 'bolder',
   fontSize: '1.2rem',
-  // '@media (min-width:600px)': {
-  //   fontSize: '1.5rem',
-  // },
-  [theme.breakpoints.down('md')]: {
-    fontSize: '2.4rem',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '2.0rem',
+  },
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '2.2rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '2.4rem',
   },
   [theme.breakpoints.up('lg')]: {
-    fontSize: '2.4rem',
+    fontSize: '2.6rem',
+  },
+};
+
+theme.typography.content = {
+  color: 'gray',
+  fontSize: '1.2rem',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.25rem',
+  },
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '1.50rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '1.75rem',
+  },
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '2.0rem',
   },
 };
 
@@ -148,98 +179,99 @@ theme.typography.subtitle = {
 theme.typography.sectionHeader = {
   color: '#33B587',
   fontSize: '1.2rem',
-  // '@media (min-width:600px)': {
-  //   fontSize: '1.5rem',
-  // },
-  [theme.breakpoints.down('md')]: {
-    fontSize: '2.4rem',
+  textTransform: 'uppercase',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '2.0rem',
+  },
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '2.2rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '2.4rem',
   },
   [theme.breakpoints.up('lg')]: {
-    fontSize: '2.4rem',
+    fontSize: '2.6rem',
   },
 };
 
 theme.typography.sectionSubtitle = {
   color: 'white',
   fontSize: '1.2rem',
-  // '@media (min-width:600px)': {
-  //   fontSize: '1.5rem',
-  // },
-  [theme.breakpoints.down('md')]: {
-    fontSize: '1.3rem',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.25rem',
+  },
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '1.2rem',
   },
   [theme.breakpoints.up('md')]: {
-    fontSize: '2.4rem',
+    fontSize: '1.3rem',
   },
   [theme.breakpoints.up('lg')]: {
-    fontSize: '2.4rem',
+    fontSize: '1.4rem',
+  },
+};
+
+theme.typography.accordion = {
+  color: 'white',
+  fontSize: '1.2rem',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.0rem',
+  },
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '1.1rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '1.2rem',
+  },
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '1.3rem',
   },
 };
 
 theme.typography.sectionContent = {
   color: 'white',
   fontSize: '1.2rem',
-  // '@media (min-width:600px)': {
-  //   fontSize: '1.5rem',
-  // },
-  [theme.breakpoints.down('md')]: {
+  [theme.breakpoints.down('sm')]: {
     fontSize: '1.25rem',
   },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '2.4rem',
-  },
-  [theme.breakpoints.up('lg')]: {
-    fontSize: '2.4rem',
-  },
-};
-
-theme.typography.content = {
-  color: 'gray',
-  fontSize: '1.2rem',
-  // '@media (min-width:600px)': {
-  //   fontSize: '1.5rem',
-  // },
-  [theme.breakpoints.down('md')]: {
-    fontSize: '1.25rem',
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '1.3rem',
   },
   [theme.breakpoints.up('md')]: {
-    fontSize: '2.4rem',
+    fontSize: '1.4rem',
   },
   [theme.breakpoints.up('lg')]: {
-    fontSize: '2.4rem',
+    fontSize: '1.5rem',
   },
 };
 
 theme.typography.skillset = {
   color: 'white',
   fontSize: '1rem',
-  [theme.breakpoints.down('md')]: {
+  [theme.breakpoints.down('sm')]: {
     fontSize: '0.9rem',
   },
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '1.1rem',
+  },
   [theme.breakpoints.up('md')]: {
-    fontSize: '2.4rem',
+    fontSize: '1.2rem',
   },
   [theme.breakpoints.up('lg')]: {
-    fontSize: '2.4rem',
+    fontSize: '1.1rem',
   },
 };
 
 theme.typography.footer = {
-  color: 'lightgray',
+  color: 'gray',
   fontSize: '1rem',
-  // '@media (min-width:600px)': {
-  //   fontSize: '1.5rem',
-  // },
   [theme.breakpoints.down('md')]: {
     fontSize: '0.95rem',
   },
   [theme.breakpoints.up('md')]: {
-    fontSize: '2.4rem',
+    fontSize: '1.2rem',
   },
   [theme.breakpoints.up('lg')]: {
-    fontSize: '2.4rem',
+    fontSize: '1.2rem',
   },
 };
