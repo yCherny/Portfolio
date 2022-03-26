@@ -9,10 +9,9 @@ export const SubPortfolio = (props) => {
     <Stack
       direction="row"
       sx={{
-        height: '100vh',
+        minHeight: '100vh',
       }}
       alignItems={{ xs: 'flex-start', lg: 'center' }}
-      id={'Landing'}
     >
       <Grid
         container
@@ -20,7 +19,7 @@ export const SubPortfolio = (props) => {
         alignItems={'flex-start'}
         justifyContent={'center'}
         rowGap={2}
-        spacing={5}
+        spacing={{ xs: 0, md: 5 }}
       >
         {props.page.data.projects.map((project) => (
           <Grid item xs={12} md={3}>

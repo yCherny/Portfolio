@@ -229,10 +229,11 @@ theme.typography.accordion = {
 };
 
 theme.typography.sectionContent = {
-  color: 'white',
+  color: 'darkgray',
+  fontWeight: '300',
   fontSize: '1.2rem',
   [theme.breakpoints.down('sm')]: {
-    fontSize: '1.25rem',
+    fontSize: '1.2rem',
   },
   [theme.breakpoints.up('sm')]: {
     fontSize: '1.3rem',

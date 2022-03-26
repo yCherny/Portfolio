@@ -1,13 +1,15 @@
 import * as React from 'react';
-import { animated, config, useSpring } from 'react-spring';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { animated, config, useSpring } from 'react-spring';
 import Box from '@mui/material/Box';
+
+// Pages
 import { Panel } from './Panel/Panel';
 import { Portfolio } from './Portfolio/Portfolio';
 import { SubPortfolio } from './Portfolio/SubPortfolio';
 import { Bulletin } from './Bulletin/Bulletin';
 import { Experience } from './Experience/Experience';
-import { useSelector } from 'react-redux';
 
 function getPage(identifier) {
   switch (identifier.type) {
@@ -53,11 +55,15 @@ export const Slideshow = (props) => {
     <AnimatedBox
       id="slideshowBox"
       display="flex"
-      flex={2}
+      flex={1}
       flexDirection={'row'}
+      flexWrap={'wrap'}
       width={'100%'}
+      rowGap={10}
+      // overflowX={{ sm: 'scroll' }}
+      style={{ overflowY: 'scroll', overflowX: 'hidden' }}
       // scrollLeft={scroll}
-      style={{ overflowX: 'scroll' }}
+      // style={{ overflowX: 'scroll' }}
       // style={style}
     >
       {props.section.pages.map((page) => (

@@ -86,17 +86,6 @@ export const Section = (props) => {
                 </MenuItem>
               </AnchorLink>
             </Menu>
-            <Stack direction="row" spacing={3} alignItems="center">
-              <ChevronRightIcon
-                style={{
-                  height: '20px',
-                  width: '20px',
-                }}
-              />
-              <p style={{ fontWeight: 'bold', margin: 0 }}>
-                {props.section.pages[0].title}
-              </p>
-            </Stack>
           </Stack>
         </Grid>
         {/* Section Data */}
@@ -114,7 +103,7 @@ export const Section = (props) => {
         ) : null}
       </Grid>
       <Slideshow section={props.section} page={page} />
-      <Stack alignItems={'center'} py={1.5}>
+      {/* <Stack alignItems={'center'} py={1.5}>
         <Pagination
           count={props.section.pages.length}
           variant="outlined"
@@ -122,7 +111,7 @@ export const Section = (props) => {
           color="secondary"
           onChange={handleChange}
         />
-      </Stack>
+      </Stack> */}
     </Stack>
   );
 };

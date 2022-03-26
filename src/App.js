@@ -20,6 +20,26 @@ const sections = [
     header: 'Development',
     pages: [
       {
+        title: 'Security & Privacy',
+        type: 'Panel',
+        data: [
+          {
+            title: 'Front-End Development',
+            subtitle: '"Good design makes a product useful" - Dieter Rams',
+            description:
+              'Although I am capable of working in any environment,  I prefer to work on the front-end, having a direct impact on the user experience. I enjoy building beautiful user interfaces with accessibility in mind, ensuring my applications are accessible to all, regardless of background, language or disability.',
+            skills: ['React', 'JavaScript'],
+          },
+          {
+            title: 'Mobile Development',
+            subtitle: 'A world constantly on the move.',
+            description:
+              "We live in a world constantly on the move. Highly dependent on technology, it increasingly becomes more a part of us as we move from desktops, to mobile devices, to AR lenses and virtual assistants. Therefore, I believe it is crucial to design 'mobile-first.'",
+            skills: ['iOS', 'Swift'],
+          },
+        ],
+      },
+      {
         title: 'TBD',
         type: 'Portfolio',
         data: {
@@ -29,15 +49,19 @@ const sections = [
           showcase: breakroom,
           flipped: false,
           apis: [
+            'React Native',
             'Google Firebase',
             'React',
-            'React Native',
+            'JavaScript',
+            'TypeScript',
+            'Git',
+            'Expo',
             'Redux',
             'Swift',
             'Java',
           ],
           description:
-            "Geolocation based social media application focused on nearby chatting. Developed from the ground up to be inclusive and conversation provoking. Users are given options to either make accounts or utilize burner anonymous accounts. Designed to work with users' current moods, aligning them with others in the world who are feeling the same type of way in the moment. Future plans to apply machine learning to better fit users into the rooms where they will benefit most from the app. Launching Summer 2022.",
+            "Geolocation based social media application focused on nearby chatting. Developed from the ground up to be inclusive and conversation provoking. Users are given options to either make accounts or utilize burner anonymous accounts. Designed to work with users' current moods, aligning them with others in the world who are feeling the same type of way. Future plans to apply machine learning to better fit users into the rooms where they will benefit most from the app. Currently in the process of transitioning into a Progressive Web App (PWA). Launching Summer 2022.",
         },
       },
       {
@@ -48,18 +72,20 @@ const sections = [
           platform: 'iOS',
           icon: rallyIcon,
           showcase: rally,
-          flipped: true,
+          flipped: false,
           apis: [
             'Swift',
-            'Apple Maps',
+            'Objective-C',
+            'UIKit',
+            'MapKit',
             'CryptoKit',
             'iCloud',
             'XCode',
             'Google Firebase',
-            'PushNotifications',
+            'Git',
           ],
           description:
-            'Geolocation based social media application surrounding users and their interests. Developed from the ground up with user privacy and application security in mind. Was built to connect individuals with similar interests together, no matter the distance or existing social circles. Has since been retired and existing code warped into the new react native application seen on the previous slide.',
+            'Native iOS geolocation based social media application surrounding users and their interests. Built with user privacy and application security in mind. Designed to connect individuals with similar interests together, no matter the distance or existing social circles. Has since been retired and existing code warped into the new react native application seen earlier.',
         },
       },
       {
@@ -70,7 +96,7 @@ const sections = [
           platform: 'Web',
           icon: ycLogo,
           showcase: portfolio,
-          flipped: false,
+          flipped: true,
           apis: [
             'Google Firebase',
             'ReactJS',
@@ -121,17 +147,110 @@ const sections = [
   },
   {
     header: 'Principles',
+
     pages: [
-      { title: 'Design', type: 'Panel' },
-      { title: 'Security & Privacy', type: 'Panel' },
-      { title: 'Accessibility', type: 'Panel' },
+      {
+        title: 'Design',
+        type: 'Panel',
+        data: [
+          {
+            title: 'Design',
+            subtitle: '"Good design makes a product useful" - Dieter Rams',
+            description:
+              'Although I am capable of working in any environment,  I prefer to work on the front-end, having a direct impact on the user experience. I enjoy building beautiful user interfaces with accessibility in mind, ensuring my applications are accessible to all, regardless of background, language or disability.',
+            skills: ['React', 'JavaScript'],
+          },
+          {
+            title: 'Security & Privacy',
+            subtitle: 'A world constantly on the move.',
+            description:
+              "We live in a world constantly on the move. Highly dependent on technology, it increasingly becomes more a part of us as we move from desktops, to mobile devices, to AR lenses and virtual assistants. Therefore, I believe it is crucial to design 'mobile-first.'",
+            skills: ['iOS', 'Swift'],
+          },
+          {
+            title: 'Accessibility',
+            subtitle: '"Good design makes a product useful" - Dieter Rams',
+            description:
+              'Although I am capable of working in any environment,  I prefer to work on the front-end, having a direct impact on the user experience. I enjoy building beautiful user interfaces with accessibility in mind, ensuring my applications are accessible to all, regardless of background, language or disability.',
+            skills: ['React', 'JavaScript'],
+          },
+        ],
+      },
     ],
   },
   {
     header: 'Résumé',
     pages: [
-      { title: 'Education', type: 'Experience' },
-      { title: 'Work Experience', type: 'Experience' },
+      {
+        title: 'Education',
+        type: 'Experience',
+        experienceType: 'Academics',
+        data: [
+          {
+            degree: 'Master of Science',
+            specialization: 'Computer Science',
+            college: 'New York University',
+            school: 'Tandon School of Engineering',
+            graduation: 'Expected Spring 2023',
+            gpa: undefined,
+            tint: `green`,
+            coursework: [
+              'Foundations of Computer Science',
+              'Information Security and Privacy',
+              'Machine Learning',
+              'Algorithm Design and Analysis',
+              'Computer Networking',
+              'Operating Systems',
+            ],
+          },
+          {
+            degree: 'Bachelor of Arts',
+            specialization: 'Economics',
+            minors: ['Physics', 'Mathematics'],
+            college: 'Baruch College',
+            school: 'Weissman School of Arts and Sciences',
+            graduation: 'Graduated Summer 2019',
+            gpa: 'GPA: 3.81',
+            tint: `red`,
+            coursework: [
+              'Advanced Micro and Macroeconomics',
+              'Econometrics',
+              'Statistics',
+              'International Economics and Finance',
+              'Economic Analysis of Policy',
+              'Political Economy',
+              'Linear Algebra',
+              'Calculus I, II, & III',
+              'Algorithms and Programming',
+              'Quantitative Physics I & II (General Relativity and Electromagnetism',
+              'Astrophysics',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Work Experience',
+        type: 'Experience',
+        experienceType: 'Work Experience',
+        data: [
+          {
+            degree: 'Haver Analytics',
+            specialization: 'Computer Science',
+            college: 'Haver Analytics',
+            school: 'Economic Research Assistant',
+            graduation: '09/2020 - 06/2021',
+            gpa: undefined,
+            tint: `green`,
+            coursework: [
+              'Developed Python scripts for batch automation to extract high frequency economic data from various sources.',
+              'Built web scrapers using beautifulsoup and utilized Pandas and VBA macros in the automation pipeline to manipulate, clean and perform quality assurance on the data.',
+              'Automated roughly 30% of the total workload assigned to the team.',
+              'Assisted in training new team members on Python and internal development tools.',
+              'Worked extensively with command line programs and batch files.',
+            ],
+          },
+        ],
+      },
       { title: 'Miscellaneous', type: 'Bulletin' },
     ],
   },
@@ -142,6 +261,10 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Landing />
+      {sections.map((section) => (
+        <Section section={section} />
+      ))}
+      <Footer />
     </ThemeProvider>
   );
 }

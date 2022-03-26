@@ -12,9 +12,9 @@ export const Portfolio = (props) => {
   return (
     <Stack
       direction="row"
-      sx={{
-        height: '100vh',
-      }}
+      // sx={{
+      //   minHeight: '100vh',
+      // }}
       alignItems={{ xs: 'flex-start', lg: 'center' }}
       id={'Landing'}
     >
@@ -76,16 +76,18 @@ export const Portfolio = (props) => {
           <Stack rowGap={2}>
             <Stack
               textAlign={{ xs: 'center', md: 'start' }}
-              spacing={1}
+              spacing={3}
               px={{ xs: 5, md: 0 }}
             >
-              <Typography variant="sectionHeader">
-                {props.page.data.title}
-              </Typography>
-              <Typography variant="sectionSubtitle">
-                {props.page.data.platform}
-              </Typography>
-              <Typography variant="sectionContent" fontWeight={'light'}>
+              <Stack>
+                <Typography variant="sectionHeader">
+                  {props.page.data.title}
+                </Typography>
+                <Typography variant="sectionSubtitle">
+                  {props.page.data.platform}
+                </Typography>
+              </Stack>
+              <Typography variant="sectionContent">
                 {props.page.data.description}
               </Typography>
             </Stack>
