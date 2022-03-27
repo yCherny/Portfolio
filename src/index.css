@@ -25,3 +25,10 @@ a {
   -ms-overflow-style: none;
   scrollbar-width: none;
 } */
+
+.header {
+  background: linear-gradient(to right, #04aab0, #03cdac);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}

@@ -8,7 +8,7 @@ export const Skillset = (props) => {
       px={2}
       py={0.75}
       bgcolor={props.color ?? '#33B587'}
-      sx={{ borderRadius: '5px' }}
+      sx={{ borderRadius: '5px', marginRight: 2 }}
     >
       <Typography
         variant="skillset"

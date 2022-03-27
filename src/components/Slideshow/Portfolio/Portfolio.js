@@ -80,7 +80,7 @@ export const Portfolio = (props) => {
               px={{ xs: 5, md: 0 }}
             >
               <Stack>
-                <Typography variant="sectionHeader">
+                <Typography variant="sectionHeader" className={'header'}>
                   {props.page.data.title}
                 </Typography>
                 <Typography variant="sectionSubtitle">
@@ -91,13 +91,11 @@ export const Portfolio = (props) => {
                 {props.page.data.description}
               </Typography>
             </Stack>
-
-            <Stack spacing={2}>
+            <Stack paddingLeft={{ xs: 2, md: 0 }}>
               <Stack
                 direction="row"
                 justifyContent={{ xs: 'center', md: 'flex-start' }}
                 rowGap={2}
-                spacing={2}
                 sx={{ flexWrap: 'wrap' }}
               >
                 {props.page.data.apis.map((tech, index) => (

@@ -1,26 +1,44 @@
-import { Footer } from './components/Footer/Footer';
-import { ThemeProvider } from '@mui/material/styles';
-import { theme } from './Theme';
-import { Landing } from './components/Landing/Landing';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Section } from './components/Section/Section';
-import { Frame } from './components/Frame/Frame';
+import { ThemeProvider } from '@mui/material/styles';
+import { colors, theme } from './Theme';
 
+// Components
+import { Landing } from './components/Landing/Landing';
+import { Section } from './components/Section/Section';
+import { Footer } from './components/Footer/Footer';
+
+// Images
 import rally from './images/rally.png';
 import rallyIcon from './images/rallyIcon.png';
 import ycLogo from './images/ycLogo.png';
 import portfolio from './images/portfolio.png';
 import underConstruction from './images/underConstruction.png';
 import breakroom from './images/breakroom.png';
-import { mockComponent } from 'react-dom/test-utils';
 
 // Temporary Hard Coded Data
 const sections = [
   {
+    header: 'About',
+    pages: [
+      {
+        title: 'About',
+        type: 'Panel',
+        data: [
+          {
+            title: 'About',
+            subtitle: 'A Jack of all Trades',
+            description:
+              'My passion for entrepreneurship and disruption, coupled with my desire to be a lifelong learner, makes me ready to tackle any challenge. I enjoy working on the bleeding edge of innovation. Building software and products for tomorrow. A software engineer focused on building innovative products, with privacy, security and user experience in mind. Focused on building innovative products that solve global issues. Serious about user experience and privacy.',
+          },
+        ],
+      },
+    ],
+  },
+  {
     header: 'Development',
     pages: [
       {
-        title: 'Security & Privacy',
+        title: 'Development',
         type: 'Panel',
         data: [
           {
@@ -105,8 +123,7 @@ const sections = [
             'TypeScript',
             'Tailwind CSS',
           ],
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas accumsan lacus vel facilisis volutpat est velit egestas.',
+          description: 'This site was built with ReactJS',
         },
       },
       {
@@ -147,7 +164,6 @@ const sections = [
   },
   {
     header: 'Principles',
-
     pages: [
       {
         title: 'Design',
@@ -162,17 +178,16 @@ const sections = [
           },
           {
             title: 'Security & Privacy',
-            subtitle: 'A world constantly on the move.',
+            subtitle: '"Hello, Friend"',
             description:
-              "We live in a world constantly on the move. Highly dependent on technology, it increasingly becomes more a part of us as we move from desktops, to mobile devices, to AR lenses and virtual assistants. Therefore, I believe it is crucial to design 'mobile-first.'",
-            skills: ['iOS', 'Swift'],
+              'It is high time society stopped being naïve about the challenges facing our privacy and security, and started taking an active role in cybersecurity. At the core of everything I build, I plan with security from the ground up. Whether to protect business interests, intellectual property, or protecting the very users who entrust us with their data, everyone is better off when ethical security is incorporated into the products we build.',
           },
           {
             title: 'Accessibility',
-            subtitle: '"Good design makes a product useful" - Dieter Rams',
+            subtitle:
+              '"The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect." — Tim Berners-Lee',
             description:
-              'Although I am capable of working in any environment,  I prefer to work on the front-end, having a direct impact on the user experience. I enjoy building beautiful user interfaces with accessibility in mind, ensuring my applications are accessible to all, regardless of background, language or disability.',
-            skills: ['React', 'JavaScript'],
+              'Everyone regardless of background, language or disability should be able to use and enjoy the products we build. It is a tall order to build applications that meet these needs, but they are essential and a core part of what the modern information age is all about. Not only does it make for a fair and just world, but for those companies more concerned about bottom lines and quarterly reports, implementation of accessibility opens new markets and expands the customer base. A win-win for all involved.',
           },
         ],
       },
@@ -193,7 +208,7 @@ const sections = [
             school: 'Tandon School of Engineering',
             graduation: 'Expected Spring 2023',
             gpa: undefined,
-            tint: `green`,
+            tint: `${colors[0]}`,
             coursework: [
               'Foundations of Computer Science',
               'Information Security and Privacy',
@@ -211,16 +226,29 @@ const sections = [
             school: 'Weissman School of Arts and Sciences',
             graduation: 'Graduated Summer 2019',
             gpa: 'GPA: 3.81',
-            tint: `red`,
+            tint: `${colors[1]}`,
             coursework: [
+              'Logic & Moral Reasoning',
+              'American Government Practice and Values',
+              'Introduction to Business',
+              'Micro-Economics Intermediate',
+              'Macro-Economics Intermediate',
+              'Fundamentals of Business Law',
+              'Fundamentals of Experimental Physics',
+              'Introduction to Information Systems',
+              'International Economics and Finance',
+              'Algorithms and Computer Programming',
+              'Economic Analysis of Policy',
               'Advanced Micro and Macroeconomics',
               'Econometrics',
-              'Statistics',
+              'Business Statistics / Statistics',
               'International Economics and Finance',
               'Economic Analysis of Policy',
               'Political Economy',
               'Linear Algebra',
-              'Calculus I, II, & III',
+              'Applied Calculus with Matrix Applications',
+              'Integral Calculus',
+              'Analytical Geometry and Vector Calculus',
               'Algorithms and Programming',
               'Quantitative Physics I & II (General Relativity and Electromagnetism',
               'Astrophysics',
@@ -236,11 +264,21 @@ const sections = [
           {
             degree: 'Haver Analytics',
             specialization: 'Computer Science',
-            college: 'Haver Analytics',
-            school: 'Economic Research Assistant',
+            college: 'Economic Research Assistant',
+            school: 'Haver Analytics',
+            skills: [
+              'Python',
+              'BeautifulSoup',
+              'Pandas',
+              'Jupyter',
+              'VBA',
+              'CLI',
+              'Automation',
+              'QA',
+            ],
             graduation: '09/2020 - 06/2021',
             gpa: undefined,
-            tint: `green`,
+            tint: `${colors[2]}`,
             coursework: [
               'Developed Python scripts for batch automation to extract high frequency economic data from various sources.',
               'Built web scrapers using beautifulsoup and utilized Pandas and VBA macros in the automation pipeline to manipulate, clean and perform quality assurance on the data.',
@@ -251,7 +289,7 @@ const sections = [
           },
         ],
       },
-      { title: 'Miscellaneous', type: 'Bulletin' },
+      { title: 'Toolkit', type: 'Bulletin' },
     ],
   },
 ];

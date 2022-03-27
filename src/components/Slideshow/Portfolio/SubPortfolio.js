@@ -21,6 +21,13 @@ export const SubPortfolio = (props) => {
         rowGap={2}
         spacing={{ xs: 0, md: 5 }}
       >
+        <Grid item xs={12}>
+          <Stack px={5}>
+            <Typography variant="sectionHeader" className={'header'}>
+              {props.page.data.title}
+            </Typography>
+          </Stack>
+        </Grid>
         {props.page.data.projects.map((project) => (
           <Grid item xs={12} md={3}>
             <Stack rowGap={2} alignItems={{ xs: 'center', md: 'flex-start' }}>
@@ -39,7 +46,9 @@ export const SubPortfolio = (props) => {
                 spacing={1}
                 px={{ xs: 5, md: 0 }}
               >
-                <Typography variant="sectionHeader">{project.title}</Typography>
+                <Typography variant="sectionHeader" className={'header'}>
+                  {project.title}
+                </Typography>
                 <Typography variant="sectionSubtitle">
                   {project.platform}
                 </Typography>
@@ -48,12 +57,11 @@ export const SubPortfolio = (props) => {
                 </Typography>
               </Stack>
 
-              <Stack spacing={2}>
+              <Stack paddingLeft={{ xs: 2, md: 0 }}>
                 <Stack
                   direction="row"
                   justifyContent={{ xs: 'center', md: 'flex-start' }}
                   rowGap={2}
-                  spacing={2}
                   sx={{ flexWrap: 'wrap' }}
                 >
                   {project.apis.map((tech, index) => (

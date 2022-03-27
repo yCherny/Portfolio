@@ -23,20 +23,24 @@ export const Panel = (props) => {
         >
           {props.page.data.map((data, index) => (
             <Grid item xs={12} md={8} lg={4}>
-              <Stack spacing={2} alignItems="flex-start" px={5}>
-                <Typography variant="sectionHeader">{data.title}</Typography>
-                <Typography variant="sectionSubtitle">
-                  {data.subtitle}
-                </Typography>
+              <Stack spacing={3} alignItems="flex-start" px={5}>
+                <Stack spacing={1}>
+                  <Typography variant="sectionHeader" className={'header'}>
+                    {data.title}
+                  </Typography>
+                  <Typography variant="sectionSubtitle">
+                    {data.subtitle}
+                  </Typography>
+                </Stack>
                 <Typography variant="sectionContent" fontWeight={'light'}>
                   {data.description}
                 </Typography>
                 {data.skills !== undefined ? (
-                  <Stack spacing={0}>
+                  <Stack>
                     <Stack
                       direction="row"
+                      justifyContent={'flex-start'}
                       rowGap={2}
-                      spacing={2}
                       sx={{ flexWrap: 'wrap' }}
                     >
                       {data.skills.map((skill, index) => (

@@ -1,13 +1,5 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-// import { Links } from '../Links/Links';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
+import { Grid, Stack, List, ListItem, Typography } from '@mui/material';
 import { Skillset } from '../../Skillset/Skillset';
 import { colors } from '../../../Theme';
 
@@ -53,40 +45,66 @@ const sections = [
   },
   {
     header: 'Languages',
-    subsections: [{ title: 'English' }, { title: 'Russian' }],
+    subsections: [{ title: '', items: ['English', 'Russian'] }],
   },
 ];
 
 export const Bulletin = (props) => {
-  return sections.map((section) => (
-    <List p={1}>
-      <ListItem>
-        <Typography variant="sectionHeader">{section.header}</Typography>
-      </ListItem>
-      <List style={{ paddingLeft: '20px' }}>
-        {section.subsections.map((subsection) => (
-          <>
-            <ListItem>
-              <Typography variant="sectionSubtitle">
-                {subsection.title}
-              </Typography>
-            </ListItem>
-            <Stack
-              direction="row"
-              justifyContent={'flex-start'}
-              rowGap={2}
-              spacing={2}
-              sx={{ flexWrap: 'wrap', paddingLeft: '40px' }}
-            >
-              {subsection.items !== undefined
-                ? subsection.items.map((element, index) => (
-                    <Skillset title={element} color={colors[index]} />
-                  ))
-                : null}
-            </Stack>
-          </>
-        ))}
-      </List>
-    </List>
-  ));
+  return (
+    <Grid
+      container
+      direction="row"
+      alignItems={'flex-start'}
+      justifyContent="center"
+      rowGap={{ xs: 5, md: 0 }}
+    >
+      <Grid item xs={12}>
+        <Stack px={5}>
+          <Typography variant="sectionHeader" className={'header'}>
+            {props.page.title}
+          </Typography>
+        </Stack>
+      </Grid>
+
+      {sections.map((section) => (
+        <Grid item xs={12} md={8} lg={4}>
+          <Stack px={5}>
+            <List>
+              <ListItem>
+                <Typography variant="sectionHeader">
+                  {section.header}
+                </Typography>
+              </ListItem>
+              <List style={{ paddingLeft: '20px' }}>
+                {section.subsections.map((subsection) => (
+                  <>
+                    <ListItem>
+                      <Typography variant="sectionSubtitle">
+                        {subsection.title}
+                      </Typography>
+                    </ListItem>
+                    <Stack
+                      direction="row"
+                      justifyContent={'flex-start'}
+                      rowGap={2}
+                      sx={{ flexWrap: 'wrap', paddingLeft: '40px' }}
+                    >
+                      {subsection.items !== undefined
+                        ? subsection.items.map((element, index) => (
+                            <Skillset
+                              title={element}
+                              color={colors[index]}
+                            />
+                          ))
+                        : null}
+                    </Stack>
+                  </>
+                ))}
+              </List>
+            </List>
+          </Stack>
+        </Grid>
+      ))}
+    </Grid>
+  );
 };

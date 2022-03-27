@@ -16,6 +16,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { moveTo } from '../../features/pagination/paginationSlice';
+import { colors } from '../../Theme';
 
 export const Section = (props) => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ export const Section = (props) => {
     <Stack direction={'column'} minHeight={'100vh'} id={props.section.header}>
       <Grid container direction="row" justifyContent="center" px={5} py={2.5}>
         {/* Section Header */}
-        <Grid item xs={props.section.header === 'Résumé' ? 7 : 12}>
+        <Grid item xs={props.section.header === 'Résumé' ? 5 : 12}>
           <Stack direction="row" spacing={1} alignItems="center">
             <Button
               variant="pageSection"
@@ -63,6 +64,11 @@ export const Section = (props) => {
               <AnchorLink href={'#Landing'}>
                 <MenuItem onClick={handleClose} variant="menuOption">
                   Landing
+                </MenuItem>
+              </AnchorLink>
+              <AnchorLink href={'#About'}>
+                <MenuItem onClick={handleClose} variant="menuOption">
+                  About
                 </MenuItem>
               </AnchorLink>
               <AnchorLink href={'#Development'}>
@@ -90,10 +96,11 @@ export const Section = (props) => {
         </Grid>
         {/* Section Data */}
         {props.section.header === 'Résumé' ? (
-          <Grid item xs={5}>
+          <Grid item xs={7}>
             <Stack direction="row-reverse">
               <Button
-                variant="contained"
+                variant="outlined"
+                style={{ border: `2px solid ${colors[0]}` }}
                 startIcon={<DocumentDownloadIcon height={25} width={25} />}
               >
                 DOWNLOAD

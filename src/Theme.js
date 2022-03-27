@@ -1,29 +1,29 @@
 import { createTheme } from '@mui/material/styles';
 
 // export const colors = [
-//   '#F72585',
-//   '#B5179E',
-//   '#7209B7',
-//   '#560BAD',
-//   '#480CA8',
-//   '#3A0CA3',
-//   '#3F37C9',
-//   '#4361EE',
-//   '#4895EF',
 //   '#4CC9F0',
+//   '#4895EF',
+//   '#4361EE',
+//   '#3F37C9',
+//   '#3A0CA3',
+//   '#480CA8',
+//   '#560BAD',
+//   '#7209B7',
+//   '#B5179E',
+//   '#F72585',
 // ];
 
 export const colors = [
-  '#4CC9F0',
-  '#4895EF',
-  '#4361EE',
-  '#3F37C9',
-  '#3A0CA3',
-  '#480CA8',
-  '#560BAD',
-  '#7209B7',
-  '#B5179E',
-  '#F72585',
+  '#04AAB0',
+  '#04AEB0',
+  '#04B2AF',
+  '#04B6AF',
+  '#04BAAF',
+  '#04BEAE',
+  '#04C2AE',
+  '#04C6AD',
+  '#04C9AD',
+  '#03CDAC',
 ];
 
 export const theme = createTheme({
@@ -82,8 +82,8 @@ export const theme = createTheme({
             border: '3px solid white',
             borderRadius: '10px',
             '&:hover': {
-              border: '3px solid #33B587',
-              backgroundColor: '#33B587',
+              border: '3px solid #04AAB0',
+              backgroundColor: '#04AAB0',
               fontWeight: '800',
             },
           },
@@ -106,7 +106,7 @@ export const theme = createTheme({
             borderRadius: '0px',
             textTransform: 'uppercase',
             '&:hover': {
-              backgroundColor: '#33B587',
+              backgroundColor: '#04AAB0',
               fontWeight: '800',
               color: 'white',
             },
@@ -177,7 +177,7 @@ theme.typography.subtitle = {
 };
 
 theme.typography.sectionHeader = {
-  color: '#33B587',
+  // color: '#33B587',
   fontSize: '1.2rem',
   textTransform: 'uppercase',
   [theme.breakpoints.down('sm')]: {
@@ -195,7 +195,7 @@ theme.typography.sectionHeader = {
 };
 
 theme.typography.sectionSubtitle = {
-  color: 'white',
+  color: 'gray',
   fontSize: '1.2rem',
   [theme.breakpoints.down('sm')]: {
     fontSize: '1.25rem',
@@ -229,7 +229,7 @@ theme.typography.accordion = {
 };
 
 theme.typography.sectionContent = {
-  color: 'darkgray',
+  color: 'white',
   fontWeight: '300',
   fontSize: '1.2rem',
   [theme.breakpoints.down('sm')]: {

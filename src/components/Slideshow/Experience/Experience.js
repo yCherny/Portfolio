@@ -21,6 +21,7 @@ import {
   ChevronDownIcon,
 } from '@heroicons/react/solid';
 import { colors } from '../../../Theme';
+import { Skillset } from '../../Skillset/Skillset';
 
 export const Experience = (props) => {
   return (
@@ -34,7 +35,7 @@ export const Experience = (props) => {
       >
         <Grid item xs={12}>
           <Stack px={5}>
-            <Typography variant="sectionHeader">
+            <Typography variant="sectionHeader" className={'header'}>
               {props.page.experienceType}
             </Typography>
           </Stack>
@@ -68,77 +69,106 @@ export const Experience = (props) => {
                     </Typography>
                   ) : null}
                 </Stack>
-                <Stack direction={'row'} spacing={1.5}>
-                  <Box
-                    px={1.5}
-                    py={0.75}
-                    bgcolor={education.tint}
-                    sx={{ borderRadius: '5px' }}
+                {props.page.experienceType === 'Academics' ? (
+                  <Stack
+                    direction={{ xs: 'column', md: 'row' }}
+                    spacing={2}
+                    alignItems={{ xs: 'flex-start' }}
                   >
-                    <Stack direction={'row'} alignItems={'center'} spacing={1}>
-                      <LibraryIcon height={18} width={18} />
-                      <Typography
-                        variant="skillset"
-                        textTransform={'uppercase'}
-                        style={{ fontWeight: '800' }}
+                    <Box
+                      px={1.5}
+                      py={0.75}
+                      bgcolor={education.tint}
+                      sx={{ borderRadius: '5px' }}
+                    >
+                      <Stack
+                        direction={'row'}
+                        alignItems={'center'}
+                        spacing={1}
                       >
-                        {education.degree}
-                      </Typography>
-                    </Stack>
-                  </Box>
-                  <Box
-                    px={1.5}
-                    py={0.75}
-                    bgcolor={education.tint}
-                    sx={{ borderRadius: '5px' }}
-                  >
-                    <Stack direction={'row'} alignItems={'center'} spacing={1}>
-                      {education.specialization === 'Computer Science' ? (
-                        <TerminalIcon height={18} width={18} />
-                      ) : (
-                        <PresentationChartLineIcon height={18} width={18} />
-                      )}
-                      <Typography
-                        variant="skillset"
-                        textTransform={'uppercase'}
-                        style={{ fontWeight: '800' }}
-                      >
-                        {education.specialization}
-                      </Typography>
-                    </Stack>
-                  </Box>
-                </Stack>
-                {education.minors !== undefined ? (
-                  <Stack direction={'row'} spacing={1.5}>
-                    {education.minors.map((minor, index) => (
-                      <Box
-                        px={1.5}
-                        py={0.75}
-                        bgcolor={education.tint}
-                        sx={{ borderRadius: '5px' }}
-                      >
-                        <Stack
-                          direction={'row'}
-                          alignItems={'center'}
-                          spacing={1}
+                        <LibraryIcon height={18} width={18} />
+                        <Typography
+                          variant="skillset"
+                          textTransform={'uppercase'}
+                          style={{ fontWeight: '800' }}
                         >
-                          {minor === 'Physics' ? (
-                            <TerminalIcon height={18} width={18} />
-                          ) : (
-                            <PresentationChartLineIcon height={18} width={18} />
-                          )}
-                          <Typography
-                            variant="skillset"
-                            textTransform={'uppercase'}
-                            style={{ fontWeight: '800' }}
+                          {education.degree}
+                        </Typography>
+                      </Stack>
+                    </Box>
+                    <Box
+                      px={1.5}
+                      py={0.75}
+                      bgcolor={education.tint}
+                      sx={{ borderRadius: '5px' }}
+                    >
+                      <Stack
+                        direction={'row'}
+                        alignItems={'center'}
+                        spacing={1}
+                      >
+                        {education.specialization === 'Computer Science' ? (
+                          <TerminalIcon height={18} width={18} />
+                        ) : (
+                          <PresentationChartLineIcon height={18} width={18} />
+                        )}
+                        <Typography
+                          variant="skillset"
+                          textTransform={'uppercase'}
+                          style={{ fontWeight: '800' }}
+                        >
+                          {education.specialization}
+                        </Typography>
+                      </Stack>
+                    </Box>
+                    {education.minors !== undefined
+                      ? education.minors.map((minor, index) => (
+                          <Box
+                            px={1.5}
+                            py={0.75}
+                            bgcolor={education.tint}
+                            sx={{ borderRadius: '5px' }}
                           >
-                            {minor}
-                          </Typography>
-                        </Stack>
-                      </Box>
-                    ))}
+                            <Stack
+                              direction={'row'}
+                              alignItems={'center'}
+                              spacing={1}
+                            >
+                              {minor === 'Physics' ? (
+                                <TerminalIcon height={18} width={18} />
+                              ) : (
+                                <PresentationChartLineIcon
+                                  height={18}
+                                  width={18}
+                                />
+                              )}
+                              <Typography
+                                variant="skillset"
+                                textTransform={'uppercase'}
+                                style={{ fontWeight: '800' }}
+                              >
+                                {minor}
+                              </Typography>
+                            </Stack>
+                          </Box>
+                        ))
+                      : null}
                   </Stack>
-                ) : null}
+                ) : (
+                  <Stack>
+                    <Stack
+                      direction="row"
+                      justifyContent={'flex-start'}
+                      rowGap={2}
+                      sx={{ flexWrap: 'wrap' }}
+                    >
+                      {education.skills.map((skill, index) => (
+                        <Skillset title={skill} color={colors[index]} />
+                      ))}
+                    </Stack>
+                  </Stack>
+                )}
+
                 <Divider color={'#414141'} style={{ width: '100%' }} />
               </Stack>
               <Accordion style={{ borderRadius: '10px' }}>
@@ -154,9 +184,9 @@ export const Experience = (props) => {
                   style={{ backgroundColor: '#111111' }}
                 >
                   <Typography variant="accordion" style={{ fontWeight: '600' }}>
-                    {props.page.experienceType === 'Academic'
+                    {props.page.experienceType === 'Academics'
                       ? `Coursework`
-                      : `Duties`}
+                      : `Responsibilities`}
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails style={{ backgroundColor: '#111111' }}>

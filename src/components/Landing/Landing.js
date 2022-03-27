@@ -94,6 +94,9 @@ export const Landing = () => {
                 spacing={2}
                 sx={{ flexWrap: 'wrap' }}
               >
+                <AnchorLink href="#About">
+                  <Button variant="outlined">About</Button>
+                </AnchorLink>
                 <AnchorLink href="#Development">
                   <Button variant="outlined">Development</Button>
                 </AnchorLink>
