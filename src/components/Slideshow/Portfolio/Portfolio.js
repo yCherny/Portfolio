@@ -12,9 +12,6 @@ export const Portfolio = (props) => {
   return (
     <Stack
       direction="row"
-      // sx={{
-      //   minHeight: '100vh',
-      // }}
       alignItems={{ xs: 'flex-start', lg: 'center' }}
       id={'Landing'}
     >
@@ -26,51 +23,17 @@ export const Portfolio = (props) => {
         rowGap={2}
       >
         <Grid item xs={12} md={5}>
-          <Stack spacing={2} alignItems="center" px={5}>
-            <Stack alignItems={'center'}>
-              {props.page.data.flipped ? (
-                <Stack direction={'row'} spacing={-15}>
-                  <img
-                    src={props.page.data.icon}
-                    alt="Project Icon"
-                    height={'130px'}
-                    style={{
-                      marginTop: '6vh',
-                      borderRadius: '10px',
-                      zIndex: -1,
-                    }}
-                  />
-                  <img
-                    src={props.page.data.showcase}
-                    alt="Project Showcase"
-                    style={{
-                      maxWidth: '50vw',
-                    }}
-                  />
-                </Stack>
-              ) : (
-                <Stack direction={'row'} spacing={-15}>
-                  <img
-                    src={props.page.data.showcase}
-                    alt="Project Showcase"
-                    style={{
-                      maxWidth: '50vw',
-                    }}
-                  />
-                  <img
-                    src={props.page.data.icon}
-                    alt="Project Icon"
-                    height={'130px'}
-                    style={{
-                      marginTop: '6vh',
-                      borderRadius: '10px',
-                      zIndex: -1,
-                    }}
-                  />
-                </Stack>
-              )}
-            </Stack>
-          </Stack>
+          <Box px={5} display={'block'}>
+            <img
+              src={props.page.data.showcase}
+              alt="Project Showcase"
+              style={{
+                aspectRatio: 1,
+                width: '100%',
+                objectFit: 'contain',
+              }}
+            />
+          </Box>
         </Grid>
         <Grid item xs={12} md={5}>
           <Stack rowGap={2}>

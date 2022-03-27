@@ -14,12 +14,16 @@ import {
   AccordionDetails,
 } from '@mui/material';
 
+import { ChevronDownIcon } from '@heroicons/react/solid';
+
 import {
-  LibraryIcon,
+  AcademicCapIcon,
+  CubeIcon,
+  CodeIcon,
   PresentationChartLineIcon,
-  TerminalIcon,
-  ChevronDownIcon,
-} from '@heroicons/react/solid';
+  CalculatorIcon,
+} from '@heroicons/react/outline';
+
 import { colors } from '../../../Theme';
 import { Skillset } from '../../Skillset/Skillset';
 
@@ -30,8 +34,7 @@ export const Experience = (props) => {
         container
         direction="row"
         alignItems={'flex-start'}
-        justifyContent="center"
-        rowGap={{ xs: 5, md: 0 }}
+        rowGap={{ xs: 2, md: 0 }}
       >
         <Grid item xs={12}>
           <Stack px={5}>
@@ -72,21 +75,22 @@ export const Experience = (props) => {
                 {props.page.experienceType === 'Academics' ? (
                   <Stack
                     direction={{ xs: 'column', md: 'row' }}
-                    spacing={2}
                     alignItems={{ xs: 'flex-start' }}
+                    flexWrap={'wrap'}
+                    rowGap={2}
                   >
                     <Box
                       px={1.5}
                       py={0.75}
                       bgcolor={education.tint}
-                      sx={{ borderRadius: '5px' }}
+                      sx={{ borderRadius: '5px', marginRight: 2 }}
                     >
                       <Stack
                         direction={'row'}
                         alignItems={'center'}
                         spacing={1}
                       >
-                        <LibraryIcon height={18} width={18} />
+                        <AcademicCapIcon height={18} width={18} />
                         <Typography
                           variant="skillset"
                           textTransform={'uppercase'}
@@ -100,7 +104,7 @@ export const Experience = (props) => {
                       px={1.5}
                       py={0.75}
                       bgcolor={education.tint}
-                      sx={{ borderRadius: '5px' }}
+                      sx={{ borderRadius: '5px', marginRight: 2 }}
                     >
                       <Stack
                         direction={'row'}
@@ -108,7 +112,7 @@ export const Experience = (props) => {
                         spacing={1}
                       >
                         {education.specialization === 'Computer Science' ? (
-                          <TerminalIcon height={18} width={18} />
+                          <CodeIcon height={18} width={18} />
                         ) : (
                           <PresentationChartLineIcon height={18} width={18} />
                         )}
@@ -127,7 +131,7 @@ export const Experience = (props) => {
                             px={1.5}
                             py={0.75}
                             bgcolor={education.tint}
-                            sx={{ borderRadius: '5px' }}
+                            sx={{ borderRadius: '5px', marginRight: 2 }}
                           >
                             <Stack
                               direction={'row'}
@@ -135,12 +139,9 @@ export const Experience = (props) => {
                               spacing={1}
                             >
                               {minor === 'Physics' ? (
-                                <TerminalIcon height={18} width={18} />
+                                <CubeIcon height={18} width={18} />
                               ) : (
-                                <PresentationChartLineIcon
-                                  height={18}
-                                  width={18}
-                                />
+                                <CalculatorIcon height={18} width={18} />
                               )}
                               <Typography
                                 variant="skillset"

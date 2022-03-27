@@ -7,8 +7,14 @@ const sections = [
   {
     header: 'Programming Languages',
     subsections: [
-      { title: 'High Proficiency', items: ['JavaScript', 'Swift', 'C++'] },
-      { title: 'Average Proficiency', items: ['Python', 'Java', 'SQL'] },
+      {
+        title: 'High Proficiency',
+        items: ['JavaScript', 'ReactJS', 'Swift', 'C++'],
+      },
+      {
+        title: 'Average Proficiency',
+        items: ['Python', 'Redux', 'Java', 'SQL'],
+      },
       { title: 'Lightly Dabbled In', items: ['C', 'Angular', 'Ruby'] },
     ],
   },
@@ -22,7 +28,7 @@ const sections = [
   {
     header: 'Certificates',
     subsections: [
-      { title: 'NYU Tandon Bridge', items: ['Certificate'] },
+      { title: 'NYU', items: ['Tandon Bridge Certificate'] },
       {
         title: 'Codecademy',
         items: [
@@ -55,8 +61,8 @@ export const Bulletin = (props) => {
       container
       direction="row"
       alignItems={'flex-start'}
-      justifyContent="center"
-      rowGap={{ xs: 5, md: 0 }}
+      rowGap={{ xs: 0, md: 0 }}
+      pb={5}
     >
       <Grid item xs={12}>
         <Stack px={5}>
@@ -68,10 +74,10 @@ export const Bulletin = (props) => {
 
       {sections.map((section) => (
         <Grid item xs={12} md={8} lg={4}>
-          <Stack px={5}>
+          <Stack px={3}>
             <List>
               <ListItem>
-                <Typography variant="sectionHeader">
+                <Typography variant="secondarySectionHeader">
                   {section.header}
                 </Typography>
               </ListItem>
@@ -79,7 +85,7 @@ export const Bulletin = (props) => {
                 {section.subsections.map((subsection) => (
                   <>
                     <ListItem>
-                      <Typography variant="sectionSubtitle">
+                      <Typography variant="secondarySectionSubtitle">
                         {subsection.title}
                       </Typography>
                     </ListItem>
@@ -91,10 +97,7 @@ export const Bulletin = (props) => {
                     >
                       {subsection.items !== undefined
                         ? subsection.items.map((element, index) => (
-                            <Skillset
-                              title={element}
-                              color={colors[index]}
-                            />
+                            <Skillset title={element} color={colors[index]} />
                           ))
                         : null}
                     </Stack>

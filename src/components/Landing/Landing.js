@@ -97,8 +97,8 @@ export const Landing = () => {
                 <AnchorLink href="#About">
                   <Button variant="outlined">About</Button>
                 </AnchorLink>
-                <AnchorLink href="#Development">
-                  <Button variant="outlined">Development</Button>
+                <AnchorLink href="#Portfolio">
+                  <Button variant="outlined">Portfolio</Button>
                 </AnchorLink>
                 <AnchorLink href="#Principles">
                   <Button variant="outlined">Principles</Button>
@@ -122,7 +122,7 @@ export const Landing = () => {
           be up again in 24 hours.
         </Alert>
       </Snackbar>
-      {/* <ArrowDownIcon
+      <ArrowDownIcon
         className="box bounce-1"
         height={20}
         width={20}
@@ -131,7 +131,7 @@ export const Landing = () => {
           position: 'absolute',
           bottom: '10px',
         }}
-      /> */}
+      />
     </Stack>
   );
 };

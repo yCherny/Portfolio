@@ -28,44 +28,34 @@ const sections = [
             title: 'About',
             subtitle: 'A Jack of all Trades',
             description:
-              'My passion for entrepreneurship and disruption, coupled with my desire to be a lifelong learner, makes me ready to tackle any challenge. I enjoy working on the bleeding edge of innovation. Building software and products for tomorrow. A software engineer focused on building innovative products, with privacy, security and user experience in mind. Focused on building innovative products that solve global issues. Serious about user experience and privacy.',
+              'My passion for entrepreneurship and disruption, coupled with my desire to be a lifelong learner, makes me ready to tackle any challenge. I am a software engineer who enjoys working on the bleeding edge of innovation, building software and products for tomorrow. Regardless of the project I am working on, I bring certain core principles to any team, (Good Design, Security & Privacy, and Accessibility) which you can read about more below.',
+          },
+          {
+            title: 'Front-End Development',
+            description:
+              'Although I am capable of working in any environment, I prefer to work on the front-end, having a direct impact on the user experience. I enjoy building beautiful user interfaces with accessibility in mind, ensuring my applications are accessible to all, regardless of background, language or even disability.',
+            skills: ['JavaScript', 'React'],
+          },
+          {
+            title: 'Mobile Development',
+            description:
+              "We live in a world constantly on the move, where technology is becoming smaller and conversly, more integrated in our lives. Therefore, I believe it is crucial to design with a 'mobile-first' mindset.",
+            skills: ['iOS', 'Swift', 'React Native'],
           },
         ],
       },
     ],
   },
   {
-    header: 'Development',
+    header: 'Portfolio',
     pages: [
-      {
-        title: 'Development',
-        type: 'Panel',
-        data: [
-          {
-            title: 'Front-End Development',
-            subtitle: '"Good design makes a product useful" - Dieter Rams',
-            description:
-              'Although I am capable of working in any environment,  I prefer to work on the front-end, having a direct impact on the user experience. I enjoy building beautiful user interfaces with accessibility in mind, ensuring my applications are accessible to all, regardless of background, language or disability.',
-            skills: ['React', 'JavaScript'],
-          },
-          {
-            title: 'Mobile Development',
-            subtitle: 'A world constantly on the move.',
-            description:
-              "We live in a world constantly on the move. Highly dependent on technology, it increasingly becomes more a part of us as we move from desktops, to mobile devices, to AR lenses and virtual assistants. Therefore, I believe it is crucial to design 'mobile-first.'",
-            skills: ['iOS', 'Swift'],
-          },
-        ],
-      },
       {
         title: 'TBD',
         type: 'Portfolio',
         data: {
           title: 'TBD',
           platform: 'PWA, Web, iOS, Android',
-          icon: underConstruction,
           showcase: breakroom,
-          flipped: false,
           apis: [
             'React Native',
             'Google Firebase',
@@ -79,7 +69,7 @@ const sections = [
             'Java',
           ],
           description:
-            "Geolocation based social media application focused on nearby chatting. Developed from the ground up to be inclusive and conversation provoking. Users are given options to either make accounts or utilize burner anonymous accounts. Designed to work with users' current moods, aligning them with others in the world who are feeling the same type of way. Future plans to apply machine learning to better fit users into the rooms where they will benefit most from the app. Currently in the process of transitioning into a Progressive Web App (PWA). Launching Summer 2022.",
+            "Geolocation based social media application focused on nearby discussions. Developed from the ground up to be inclusive and conversation provoking. Users are given options to either use public accounts or utilize burner anonymous accounts. Designed to work with users' current moods, aligning them with others in the world who are feeling the same type of way. Future plans exist to apply machine learning to better fit users into  rooms where they will benefit the most from the app. Currently in the process of transitioning into a Progressive Web App (PWA). Launching Summer 2022.",
         },
       },
       {
@@ -88,9 +78,7 @@ const sections = [
         data: {
           title: 'Rally',
           platform: 'iOS',
-          icon: rallyIcon,
           showcase: rally,
-          flipped: false,
           apis: [
             'Swift',
             'Objective-C',
@@ -112,9 +100,7 @@ const sections = [
         data: {
           title: 'This Site',
           platform: 'Web',
-          icon: ycLogo,
           showcase: portfolio,
-          flipped: true,
           apis: [
             'Google Firebase',
             'ReactJS',
@@ -123,7 +109,6 @@ const sections = [
             'TypeScript',
             'Tailwind CSS',
           ],
-          description: 'This site was built with ReactJS',
         },
       },
       {
@@ -145,9 +130,15 @@ const sections = [
               title: 'Quill',
               platform: 'Bot',
               icon: underConstruction,
-              apis: ['JavaScript', 'Python', 'Machine Learning'],
+              apis: [
+                'JavaScript',
+                'Python',
+                'Machine Learning',
+                'Spyder',
+                'BeautifulSoup',
+              ],
               description:
-                'A webscraping and purchasing bot that scours the web for a given product, purchases items automatically for the user and keeps track of price changes over time. Meant to handle the tedious nature of shopping for difficult to acquire products.',
+                'A webscraping and purchasing bot that scours the web for a given product, purchases items automatically for the user and keeps track of price changes over time. Meant to handle the tedious nature of shopping for difficult-to-acquire products.',
             },
             {
               title: 'Jellyfish',
@@ -170,24 +161,24 @@ const sections = [
         type: 'Panel',
         data: [
           {
-            title: 'Design',
+            title: 'Good Design',
             subtitle: '"Good design makes a product useful" - Dieter Rams',
             description:
-              'Although I am capable of working in any environment,  I prefer to work on the front-end, having a direct impact on the user experience. I enjoy building beautiful user interfaces with accessibility in mind, ensuring my applications are accessible to all, regardless of background, language or disability.',
+              "My first serious dive into software development started with me building applications for iPhones. During that time I ran into Apple's Human Interface Guidelines. This concept of building beautiful products which are accessible to everyone has since become a core principle of mine. I am a strong believer that if a product does not look good, does not feel good, then it will fail no matter what the teams' goal was. Thus, I believe solid design comes before any code gets ever written, and continues to be an iterative process for the lifecycle of the product.",
             skills: ['React', 'JavaScript'],
           },
           {
             title: 'Security & Privacy',
             subtitle: '"Hello, Friend"',
             description:
-              'It is high time society stopped being naïve about the challenges facing our privacy and security, and started taking an active role in cybersecurity. At the core of everything I build, I plan with security from the ground up. Whether to protect business interests, intellectual property, or protecting the very users who entrust us with their data, everyone is better off when ethical security is incorporated into the products we build.',
+              'Cybersecurity has become more popular and welcomed in teams across the globe, especially in light of recent global events. However, it still remains a lower priority in many organizations. I believe in taking an active role in cybersecurity, building applications and services from the ground up to be secure for both the organization and its customers. These days we all lose more than money when breaches occur. We lose faith from our shareholders and customers. And in a world becoming ever more competitive, I feel having the trust and faith of end-users goes a long way in establishing brand loyalty. Privacy is a no-brainer, no one wants their private information shared about. I feel organizations should only request and store information they need to provide services and then respect the privacy of their clients. However, one cannot ensure privacy without security, so these go hand to hand in my opinion.',
           },
           {
             title: 'Accessibility',
             subtitle:
               '"The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect." — Tim Berners-Lee',
             description:
-              'Everyone regardless of background, language or disability should be able to use and enjoy the products we build. It is a tall order to build applications that meet these needs, but they are essential and a core part of what the modern information age is all about. Not only does it make for a fair and just world, but for those companies more concerned about bottom lines and quarterly reports, implementation of accessibility opens new markets and expands the customer base. A win-win for all involved.',
+              'Everyone regardless of background, language or disability, should be able to use and enjoy the products we build. It is a tall order to build applications that meet these needs, but they are essential and a core part of what the modern information age is all about. Not only does it make for a fair and just world, but even for companies more concerned about bottom lines and quarterly reports, implementation of accessibility opens new markets and expands the customer base. A win-win for all involved.',
           },
         ],
       },
@@ -229,29 +220,24 @@ const sections = [
             tint: `${colors[1]}`,
             coursework: [
               'Logic & Moral Reasoning',
-              'American Government Practice and Values',
-              'Introduction to Business',
-              'Micro-Economics Intermediate',
-              'Macro-Economics Intermediate',
-              'Fundamentals of Business Law',
-              'Fundamentals of Experimental Physics',
               'Introduction to Information Systems',
-              'International Economics and Finance',
               'Algorithms and Computer Programming',
-              'Economic Analysis of Policy',
-              'Advanced Micro and Macroeconomics',
-              'Econometrics',
-              'Business Statistics / Statistics',
-              'International Economics and Finance',
-              'Economic Analysis of Policy',
-              'Political Economy',
               'Linear Algebra',
               'Applied Calculus with Matrix Applications',
               'Integral Calculus',
               'Analytical Geometry and Vector Calculus',
-              'Algorithms and Programming',
+              'Fundamentals of Experimental Physics',
               'Quantitative Physics I & II (General Relativity and Electromagnetism',
               'Astrophysics',
+              'Introductory, Intermediate and Advanced Micro and Macroeconomics',
+              'International Economics and Finance',
+              'Economic Analysis of Policy',
+              'Political Economy',
+              'Econometrics',
+              'Statistics',
+              'Introduction to Business',
+              'Fundamentals of Business Law',
+              'Including other less relevant courses...contact me for an unofficial transcript',
             ],
           },
         ],

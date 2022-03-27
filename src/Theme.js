@@ -66,7 +66,7 @@ export const theme = createTheme({
             borderRadius: '0px',
             textTransform: 'uppercase',
             '&:hover': {
-              backgroundColor: '#33B587',
+              backgroundColor: '#04AAB0',
               fontWeight: '800',
               color: 'white',
             },
@@ -79,9 +79,11 @@ export const theme = createTheme({
         {
           props: { variant: 'outlined' },
           style: {
-            border: '3px solid white',
+            color: '#04AAB0',
+            border: '3px solid #04AAB0',
             borderRadius: '10px',
             '&:hover': {
+              color: 'white',
               border: '3px solid #04AAB0',
               backgroundColor: '#04AAB0',
               fontWeight: '800',
@@ -115,8 +117,8 @@ export const theme = createTheme({
         {
           props: { variant: 'rounded' },
           style: {
-            color: '#33B587',
-            border: '2px solid #33B587',
+            color: '#04AAB0',
+            border: '2px solid #04AAB0',
             borderRadius: '50px',
             fontWeight: 800,
           },
@@ -208,6 +210,40 @@ theme.typography.sectionSubtitle = {
   },
   [theme.breakpoints.up('lg')]: {
     fontSize: '1.4rem',
+  },
+};
+
+theme.typography.secondarySectionHeader = {
+  fontSize: '1.2rem',
+  textTransform: 'uppercase',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.6rem',
+  },
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '1.8rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '2.0rem',
+  },
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '2.2rem',
+  },
+};
+
+theme.typography.secondarySectionSubtitle = {
+  color: 'gray',
+  fontSize: '1.2rem',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.3rem',
+  },
+  [theme.breakpoints.up('sm')]: {
+    fontSize: '1.4rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '1.5rem',
+  },
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '1.6rem',
   },
 };
 

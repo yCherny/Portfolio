@@ -61,7 +61,7 @@ export const Slideshow = (props) => {
       width={'100%'}
       rowGap={10}
       // overflowX={{ sm: 'scroll' }}
-      style={{ overflowY: 'scroll', overflowX: 'hidden' }}
+      style={{ overflowX: 'hidden' }}
       // scrollLeft={scroll}
       // style={{ overflowX: 'scroll' }}
       // style={style}

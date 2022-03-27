@@ -11,14 +11,12 @@ export const Panel = (props) => {
         flexDirection={'row'}
         overflowx="scroll"
         width={'100%'}
-        // bgcolor={'green'}
       >
         <Grid
           container
           direction="row"
-          alignItems={'flex-end'}
-          justifyContent="center"
-          // p={{ xs: 5, md: 10 }}
+          alignItems={'flex-start'}
+          justifyContent="flex-start"
           rowGap={{ xs: 5, md: 0 }}
         >
           {props.page.data.map((data, index) => (

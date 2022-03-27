@@ -31,11 +31,21 @@ export const Footer = () => {
               INTERESTED?
             </Typography>
             <Stack spacing={3} alignItems="flex-start">
-              <Button variant="contained">REACH OUT</Button>
+              <a href="mailto: yegorcherny@gmail.com">
+                <Button variant="contained">REACH OUT *</Button>
+              </a>
               <Links />
             </Stack>
             <Typography variant="footer" style={{ fontWeight: '400' }}>
               2022 © Yegor Chernyshev | All Rights Reserved
+            </Typography>
+            <Typography variant="footer" style={{ fontWeight: '400' }}>
+              * Dynamic contact form coming soon, but you can email me in the
+              meantime
+            </Typography>
+            <Typography variant="footer" style={{ fontWeight: '400' }}>
+              ** The website in general is a work in constant progress so check
+              back soon! :)
             </Typography>
           </Stack>
         </Grid>
