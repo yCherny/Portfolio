@@ -82,6 +82,7 @@ export const theme = createTheme({
             color: '#04AAB0',
             border: '3px solid #04AAB0',
             borderRadius: '10px',
+            fontWeight: 800,
             '&:hover': {
               color: 'white',
               border: '3px solid #04AAB0',

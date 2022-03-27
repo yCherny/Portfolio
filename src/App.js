@@ -55,6 +55,7 @@ const sections = [
         data: {
           title: 'TBD',
           platform: 'PWA, Web, iOS, Android',
+          cofounded: true,
           showcase: breakroom,
           apis: [
             'React Native',

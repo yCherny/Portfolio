@@ -50,6 +50,15 @@ export const Portfolio = (props) => {
                   {props.page.data.platform}
                 </Typography>
               </Stack>
+              {props.page.data.cofounded ? (
+                <Stack alignItems={{ xs: 'center', md: 'flex-start' }}>
+                  <a href={'https://yulian.codes'}>
+                    <Button variant="outlined">
+                      Cofounded with Yulian Kraynyak
+                    </Button>
+                  </a>
+                </Stack>
+              ) : null}
               <Typography variant="sectionContent">
                 {props.page.data.description}
               </Typography>
