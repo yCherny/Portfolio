@@ -19,6 +19,7 @@ import breakroom from './images/breakroom.png';
 const sections = [
   {
     header: 'About',
+    style: 0,
     pages: [
       {
         title: 'About',
@@ -48,6 +49,7 @@ const sections = [
   },
   {
     header: 'Portfolio',
+    style: 1,
     pages: [
       {
         title: 'TBD',
@@ -156,6 +158,7 @@ const sections = [
   },
   {
     header: 'Principles',
+    style: 0,
     pages: [
       {
         title: 'Design',
@@ -187,6 +190,7 @@ const sections = [
   },
   {
     header: 'Résumé',
+    style: 1,
     pages: [
       {
         title: 'Education',

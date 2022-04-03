@@ -14,7 +14,6 @@ import './style.css';
 
 // Assets
 import profilePic from '../../images/profilePic.jpeg';
-import background from '../../images/background.svg';
 import { ArrowDownIcon } from '@heroicons/react/solid';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -37,9 +36,6 @@ export const Landing = () => {
       direction="row"
       sx={{
         height: '100vh',
-        backgroundImage: `url(${background})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
       }}
       alignItems="flex-end"
       id={'Landing'}
@@ -67,7 +63,7 @@ export const Landing = () => {
           </Stack>
         </Grid>
         {/* Data */}
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid item xs={12} md={6} lg={6} xl={4}>
           <Stack spacing={4} alignItems="flex-start">
             <Stack spacing={2} alignItems="flex-start">
               <Button variant="rounded">Open to Work</Button>
@@ -80,7 +76,7 @@ export const Landing = () => {
               <Typography variant="header" style={{ fontWeight: '400' }}>
                 BRIDGING BUSINESS AND TECHNOLOGY
               </Typography>
-              <Typography variant="content" style={{ fontWeight: '400' }}>
+              <Typography variant="content" style={{ fontWeight: '300' }}>
                 Software engineer from New York City focused on building
                 beautiful, innovative products.
               </Typography>

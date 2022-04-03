@@ -2,7 +2,7 @@ import * as React from 'react';
 // import { Links } from '../Links/Links';
 import { Grid, Stack, Typography } from '@mui/material/';
 import { Skillset } from '../../Skillset/Skillset';
-import { colors } from '../../../Theme';
+import { mainColors, colors } from '../../../Theme';
 
 export const SubPortfolio = (props) => {
   return (
@@ -23,22 +23,26 @@ export const SubPortfolio = (props) => {
       >
         <Grid item xs={12}>
           <Stack px={5}>
-            <Typography variant="sectionHeader" className={'header'}>
+            <Typography
+              variant="sectionHeader"
+              style={{ color: mainColors.light }}
+            >
               {props.page.data.title}
             </Typography>
           </Stack>
         </Grid>
         {props.page.data.projects.map((project) => (
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={3.5}>
             <Stack rowGap={2} alignItems={{ xs: 'center', md: 'flex-start' }}>
               <img
                 src={project.icon}
                 alt="Project Icon"
-                height={'130px'}
                 style={{
+                  aspectRatio: 1,
+                  width: '40%',
+                  objectFit: 'contain',
                   marginTop: '6vh',
                   borderRadius: '10px',
-                  zIndex: -1,
                 }}
               />
               <Stack
@@ -46,13 +50,19 @@ export const SubPortfolio = (props) => {
                 spacing={1}
                 px={{ xs: 5, md: 0 }}
               >
-                <Typography variant="sectionHeader" className={'header'}>
+                <Typography
+                  variant="sectionHeader"
+                  style={{ color: mainColors.light }}
+                >
                   {project.title}
                 </Typography>
                 <Typography variant="sectionSubtitle">
                   {project.platform}
                 </Typography>
-                <Typography variant="sectionContent" fontWeight={'light'}>
+                <Typography
+                  variant="sectionContent"
+                  style={{ color: mainColors.light }}
+                >
                   {project.description}
                 </Typography>
               </Stack>

@@ -24,7 +24,7 @@ import {
   CalculatorIcon,
 } from '@heroicons/react/outline';
 
-import { colors } from '../../../Theme';
+import { mainColors, colors } from '../../../Theme';
 import { Skillset } from '../../Skillset/Skillset';
 
 export const Experience = (props) => {
@@ -37,18 +37,24 @@ export const Experience = (props) => {
         rowGap={{ xs: 2, md: 0 }}
       >
         <Grid item xs={12}>
-          <Stack px={5}>
-            <Typography variant="sectionHeader" className={'header'}>
+          <Stack px={8}>
+            <Typography
+              variant="sectionHeader"
+              style={{ color: mainColors.light }}
+            >
               {props.page.experienceType}
             </Typography>
           </Stack>
         </Grid>
         {props.page.data.map((education) => (
-          <Grid item xs={12} md={8} lg={4}>
-            <Stack spacing={2} px={5}>
+          <Grid item xs={12} md={8} lg={12}>
+            <Stack spacing={2} px={8}>
               <Stack spacing={1}>
                 <Stack>
-                  <Typography variant="sectionHeader">
+                  <Typography
+                    variant="sectionHeader"
+                    style={{ color: mainColors.light }}
+                  >
                     {education.college}
                   </Typography>
                   <Typography variant="sectionSubtitle">

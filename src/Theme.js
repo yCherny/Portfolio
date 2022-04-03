@@ -1,29 +1,24 @@
 import { createTheme } from '@mui/material/styles';
 
-// export const colors = [
-//   '#4CC9F0',
-//   '#4895EF',
-//   '#4361EE',
-//   '#3F37C9',
-//   '#3A0CA3',
-//   '#480CA8',
-//   '#560BAD',
-//   '#7209B7',
-//   '#B5179E',
-//   '#F72585',
-// ];
+export const mainColors = {
+  main: '#00011D',
+  dark: '#000000',
+  light: '#FFFFFF',
+  tint: '#4cc9f0',
+};
 
+// #BDB15F
 export const colors = [
-  '#04AAB0',
-  '#04AEB0',
-  '#04B2AF',
-  '#04B6AF',
-  '#04BAAF',
-  '#04BEAE',
-  '#04C2AE',
-  '#04C6AD',
-  '#04C9AD',
-  '#03CDAC',
+  '#7400b8',
+  '#6930c3',
+  '#5e60ce',
+  '#5390d9',
+  '#4ea8de',
+  '#48bfe3',
+  '#56cfe1',
+  '#64dfdf',
+  '#72efdd',
+  '#80ffdb',
 ];
 
 export const theme = createTheme({
@@ -41,7 +36,7 @@ export const theme = createTheme({
   },
   palette: {
     background: {
-      default: '#000000',
+      default: mainColors.main,
     },
     primary: {
       main: '#FFFFFF',
@@ -66,7 +61,7 @@ export const theme = createTheme({
             borderRadius: '0px',
             textTransform: 'uppercase',
             '&:hover': {
-              backgroundColor: '#04AAB0',
+              backgroundColor: mainColors.tint,
               fontWeight: '800',
               color: 'white',
             },
@@ -79,14 +74,14 @@ export const theme = createTheme({
         {
           props: { variant: 'outlined' },
           style: {
-            color: '#04AAB0',
-            border: '3px solid #04AAB0',
+            color: `${mainColors.tint}`,
+            border: `3px solid ${mainColors.tint}`,
             borderRadius: '10px',
             fontWeight: 800,
             '&:hover': {
               color: 'white',
-              border: '3px solid #04AAB0',
-              backgroundColor: '#04AAB0',
+              border: `3px solid ${mainColors.tint}`,
+              backgroundColor: mainColors.tint,
               fontWeight: '800',
             },
           },
@@ -102,14 +97,14 @@ export const theme = createTheme({
         {
           props: { variant: 'pageSection' },
           style: {
+            color: mainColors.light,
+            backgroundColor: mainColors.tint,
             padding: '8px 30px 8px 30px',
-            color: '#000000',
-            backgroundColor: '#FFFFFF',
             fontWeight: 'bold',
             borderRadius: '0px',
             textTransform: 'uppercase',
             '&:hover': {
-              backgroundColor: '#04AAB0',
+              backgroundColor: mainColors.tint,
               fontWeight: '800',
               color: 'white',
             },
@@ -147,7 +142,7 @@ theme.typography.header = {
 };
 
 theme.typography.content = {
-  color: 'gray',
+  color: '#717171',
   fontSize: '1.2rem',
   [theme.breakpoints.down('sm')]: {
     fontSize: '1.25rem',
@@ -180,9 +175,10 @@ theme.typography.subtitle = {
 };
 
 theme.typography.sectionHeader = {
-  // color: '#33B587',
+  color: '#000000',
+  fontFamily: ['Roboto'],
+  fontWeight: '600',
   fontSize: '1.2rem',
-  textTransform: 'uppercase',
   [theme.breakpoints.down('sm')]: {
     fontSize: '2.0rem',
   },
@@ -198,8 +194,11 @@ theme.typography.sectionHeader = {
 };
 
 theme.typography.sectionSubtitle = {
-  color: 'gray',
+  color: mainColors.tint,
+  fontFamily: ['Roboto'],
+  fontWeight: '600',
   fontSize: '1.2rem',
+  textTransform: 'uppercase',
   [theme.breakpoints.down('sm')]: {
     fontSize: '1.25rem',
   },
@@ -210,7 +209,7 @@ theme.typography.sectionSubtitle = {
     fontSize: '1.3rem',
   },
   [theme.breakpoints.up('lg')]: {
-    fontSize: '1.4rem',
+    fontSize: '0.95rem',
   },
 };
 
@@ -266,7 +265,8 @@ theme.typography.accordion = {
 };
 
 theme.typography.sectionContent = {
-  color: 'white',
+  color: mainColors.main,
+  fontFamily: ['Quicksand'],
   fontWeight: '300',
   fontSize: '1.2rem',
   [theme.breakpoints.down('sm')]: {

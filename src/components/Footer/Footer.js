@@ -2,22 +2,12 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { Links } from '../Links/Links';
-import background from '../../images/background.svg';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 export const Footer = () => {
   return (
-    <Stack
-      direction={'row'}
-      sx={{
-        backgroundImage: `url(${background})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-      }}
-      alignItems={{ xs: 'flex-start' }}
-      id={'Contact'}
-    >
+    <Stack direction={'row'} alignItems={{ xs: 'flex-start' }} id={'Contact'}>
       <Grid
         container
         direction="row"
@@ -25,7 +15,7 @@ export const Footer = () => {
         p={{ xs: 5, md: 10 }}
         rowGap={{ xs: 5, md: 0 }}
       >
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid item xs={12} md={6} lg={8} xl={4}>
           <Stack spacing={2} alignItems="flex-start">
             <Typography variant="header" style={{ fontWeight: '400' }}>
               INTERESTED?
@@ -50,7 +40,7 @@ export const Footer = () => {
           </Stack>
         </Grid>
         {/* TODO: - Fix */}
-        <Grid item xs={12} md={6} lg={4}></Grid>
+        <Grid item xs={12} md={6} lg={2}></Grid>
       </Grid>
     </Stack>
   );

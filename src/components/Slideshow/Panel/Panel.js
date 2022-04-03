@@ -17,24 +17,22 @@ export const Panel = (props) => {
           direction="row"
           alignItems={'flex-start'}
           justifyContent="flex-start"
-          rowGap={{ xs: 5, md: 0 }}
+          rowGap={{ xs: 5, xl: 0 }}
         >
           {props.page.data.map((data, index) => (
-            <Grid item xs={12} md={8} lg={4}>
-              <Stack spacing={3} alignItems="flex-start" px={5}>
-                <Stack spacing={1}>
-                  <Typography variant="sectionHeader" className={'header'}>
-                    {data.title}
-                  </Typography>
-                  <Typography variant="sectionSubtitle">
-                    {data.subtitle}
-                  </Typography>
-                </Stack>
+            <Grid item xs={12} md={8} lg={12}>
+              <Stack spacing={3} alignItems="flex-start" px={{ xs: 5, md: 8 }}>
+                <Typography variant="sectionSubtitle">
+                  {data.subtitle}
+                </Typography>
+                <Typography variant="sectionHeader" className={'header'}>
+                  {data.title}
+                </Typography>
                 <Typography variant="sectionContent" fontWeight={'light'}>
                   {data.description}
                 </Typography>
                 {data.skills !== undefined ? (
-                  <Stack>
+                  <Stack pt={3}>
                     <Stack
                       direction="row"
                       justifyContent={'flex-start'}

@@ -7,6 +7,7 @@ import {
   Pagination,
   Menu,
   MenuItem,
+  Card,
 } from '@mui/material';
 
 import {
@@ -22,7 +23,7 @@ import { usePagination } from '@mui/material/Pagination';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { useSelector, useDispatch } from 'react-redux';
 import { moveTo } from '../../features/pagination/paginationSlice';
-import { colors } from '../../Theme';
+import { mainColors, colors } from '../../Theme';
 
 export const Section = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -40,87 +41,98 @@ export const Section = (props) => {
       direction="column"
       id={props.section.header}
       alignItems="flex-start"
-      px={{ xs: 0, lg: 50 }}
+      px={{ xs: 0, lg: 22, xl: 50 }}
       py={2.5}
+      // style={{ backgroundColor: '#344009' }}
     >
-      <Grid item xs={12}>
-        <Grid container direction="row" px={5} py={2.5}>
-          {/* Section Header */}
-          <Grid item xs={props.section.header === 'Résumé' ? 5 : 12}>
-            <Stack direction="row" spacing={1} alignItems="center">
-              <Button
-                variant="pageSection"
-                id="basic-button"
-                aria-controls={open ? 'basic-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-              >
-                {props.section.header}
-              </Button>
-              <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                  'aria-labelledby': 'basic-button',
-                }}
-              >
-                <AnchorLink href={'#Landing'}>
-                  <MenuItem onClick={handleClose} variant="menuOption">
-                    Landing
-                  </MenuItem>
-                </AnchorLink>
-                <AnchorLink href={'#About'}>
-                  <MenuItem onClick={handleClose} variant="menuOption">
-                    About
-                  </MenuItem>
-                </AnchorLink>
-                <AnchorLink href={'#Portfolio'}>
-                  <MenuItem onClick={handleClose} variant="menuOption">
-                    Portfolio
-                  </MenuItem>
-                </AnchorLink>
-                <AnchorLink href={'#Principles'}>
-                  <MenuItem onClick={handleClose} variant="menuOption">
-                    Principles
-                  </MenuItem>
-                </AnchorLink>
-                <AnchorLink href={'#Résumé'}>
-                  <MenuItem onClick={handleClose} variant="menuOption">
-                    Résumé
-                  </MenuItem>
-                </AnchorLink>
-                <AnchorLink href={'#Contact'}>
-                  <MenuItem onClick={handleClose} variant="menuOption">
-                    Contact
-                  </MenuItem>
-                </AnchorLink>
-              </Menu>
-            </Stack>
-          </Grid>
-          {/* Section Data */}
-          {props.section.header === 'Résumé' ? (
-            <Grid item xs={7}>
-              <Stack direction="row-reverse">
-                <a href={resume} download>
-                  <Button
-                    variant="outlined"
-                    style={{ border: `2px solid ${colors[0]}` }}
-                    startIcon={<DocumentDownloadIcon height={25} width={25} />}
-                  >
-                    DOWNLOAD
-                  </Button>
-                </a>
+      <Card
+        style={{
+          backgroundColor: props.section.style
+            ? mainColors.dark
+            : mainColors.light,
+        }}
+      >
+        <Grid item xs={12}>
+          <Grid container direction="row" p={{ xs: 5, md: 8 }}>
+            {/* Section Header */}
+            <Grid item xs={props.section.header === 'Résumé' ? 5 : 12}>
+              <Stack direction="row" spacing={1} alignItems="center">
+                <Button
+                  variant="pageSection"
+                  id="basic-button"
+                  aria-controls={open ? 'basic-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}
+                  onClick={handleClick}
+                >
+                  {props.section.header}
+                </Button>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                  }}
+                >
+                  <AnchorLink href={'#Landing'}>
+                    <MenuItem onClick={handleClose} variant="menuOption">
+                      Landing
+                    </MenuItem>
+                  </AnchorLink>
+                  <AnchorLink href={'#About'}>
+                    <MenuItem onClick={handleClose} variant="menuOption">
+                      About
+                    </MenuItem>
+                  </AnchorLink>
+                  <AnchorLink href={'#Portfolio'}>
+                    <MenuItem onClick={handleClose} variant="menuOption">
+                      Portfolio
+                    </MenuItem>
+                  </AnchorLink>
+                  <AnchorLink href={'#Principles'}>
+                    <MenuItem onClick={handleClose} variant="menuOption">
+                      Principles
+                    </MenuItem>
+                  </AnchorLink>
+                  <AnchorLink href={'#Résumé'}>
+                    <MenuItem onClick={handleClose} variant="menuOption">
+                      Résumé
+                    </MenuItem>
+                  </AnchorLink>
+                  <AnchorLink href={'#Contact'}>
+                    <MenuItem onClick={handleClose} variant="menuOption">
+                      Contact
+                    </MenuItem>
+                  </AnchorLink>
+                </Menu>
               </Stack>
             </Grid>
-          ) : null}
+            {/* Section Data */}
+            {props.section.header === 'Résumé' ? (
+              <Grid item xs={7}>
+                <Stack direction="row-reverse">
+                  <a href={resume} download>
+                    <Button
+                      variant="outlined"
+                      style={{ border: `2px solid ${colors[0]}` }}
+                      startIcon={
+                        <DocumentDownloadIcon height={25} width={25} />
+                      }
+                    >
+                      DOWNLOAD
+                    </Button>
+                  </a>
+                </Stack>
+              </Grid>
+            ) : null}
+          </Grid>
         </Grid>
-      </Grid>
-      <Grid item xs={12}>
-        <Slideshow section={props.section} />
-      </Grid>
+        <Grid item xs={12} pb={{ xs: 5, md: 8 }}>
+          <Slideshow section={props.section} />
+        </Grid>
+      </Card>
     </Grid>
   );
 };

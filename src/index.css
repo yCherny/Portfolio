@@ -16,6 +16,15 @@ a {
   text-decoration: none;
 }
 
+#root {
+  background: rgb(0, 1, 29);
+  background: linear-gradient(
+    115deg,
+    rgba(0, 1, 29, 1) 0%,
+    rgba(0, 2, 50, 1) 100%
+  );
+}
+
 /* #slideshowBox::-webkit-scrollbar {
   display: none;
 } */
@@ -26,9 +35,11 @@ a {
   scrollbar-width: none;
 } */
 
-.header {
-  background: linear-gradient(to right, #04aab0, #03cdac);
+/* #04aab0, #03cdac */
+
+/* .header {
+  background: linear-gradient(to right, #0077b6, #00b4d8);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-}
+} */

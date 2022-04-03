@@ -3,10 +3,9 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-// import { Links } from '../Links/Links';
 import Typography from '@mui/material/Typography';
 import { Skillset } from '../../Skillset/Skillset';
-import { colors } from '../../../Theme';
+import { mainColors, colors } from '../../../Theme';
 
 export const Portfolio = (props) => {
   return (
@@ -14,6 +13,7 @@ export const Portfolio = (props) => {
       direction="row"
       alignItems={{ xs: 'flex-start', lg: 'center' }}
       id={'Landing'}
+      px={{ xs: 0, md: 8 }}
     >
       <Grid
         container
@@ -22,7 +22,7 @@ export const Portfolio = (props) => {
         justifyContent={'center'}
         rowGap={2}
       >
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={6}>
           <Box px={5} display={'block'}>
             <img
               src={props.page.data.showcase}
@@ -35,7 +35,7 @@ export const Portfolio = (props) => {
             />
           </Box>
         </Grid>
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={6}>
           <Stack rowGap={2}>
             <Stack
               textAlign={{ xs: 'center', md: 'start' }}
@@ -43,7 +43,10 @@ export const Portfolio = (props) => {
               px={{ xs: 5, md: 0 }}
             >
               <Stack>
-                <Typography variant="sectionHeader" className={'header'}>
+                <Typography
+                  variant="sectionHeader"
+                  style={{ color: mainColors.light }}
+                >
                   {props.page.data.title}
                 </Typography>
                 <Typography variant="sectionSubtitle">
@@ -59,7 +62,10 @@ export const Portfolio = (props) => {
                   </a>
                 </Stack>
               ) : null}
-              <Typography variant="sectionContent">
+              <Typography
+                variant="sectionContent"
+                style={{ color: mainColors.light }}
+              >
                 {props.page.data.description}
               </Typography>
             </Stack>
