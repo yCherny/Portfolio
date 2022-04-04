@@ -66,7 +66,9 @@ export const Landing = () => {
         <Grid item xs={12} md={6} lg={6} xl={4}>
           <Stack spacing={4} alignItems="flex-start">
             <Stack spacing={2} alignItems="flex-start">
-              <Button variant="rounded">Open to Work</Button>
+              <a href="mailto: yegorcherny@gmail.com">
+                <Button variant="rounded">Open to Work</Button>
+              </a>
               <AnchorLink href={'#Landing'}>
                 <Button variant="pageSection">YEGOR CHERNYSHEV</Button>
               </AnchorLink>
